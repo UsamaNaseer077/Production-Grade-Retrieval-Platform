@@ -1,0 +1,58 @@
+{
+  "name": "retrieval_concepts",
+  "entries": [
+    {
+      "concept": "BM25",
+      "type": "sparse_retrieval",
+      "description": "Probabilistic ranking using term frequency, document frequency, and document length normalisation. Controlled by k1 (term saturation) and b (length normalisation) hyperparameters.",
+      "strengths": [
+        "exact keyword match",
+        "no GPU required",
+        "interpretable"
+      ],
+      "weaknesses": [
+        "no semantic understanding",
+        "vocabulary mismatch"
+      ]
+    },
+    {
+      "concept": "Dense Retrieval",
+      "type": "neural_retrieval",
+      "description": "Bi-encoder architecture encodes query and document independently. FAISS or ScaNN for approximate nearest-neighbour search at scale.",
+      "strengths": [
+        "semantic matching",
+        "paraphrase recall"
+      ],
+      "weaknesses": [
+        "no exact match",
+        "computationally expensive",
+        "stale if not updated"
+      ]
+    },
+    {
+      "concept": "RRF",
+      "type": "fusion",
+      "description": "Reciprocal Rank Fusion score = sum(1/(k+rank)) across lists. k=60 is empirically robust. Requires no score normalisation.",
+      "strengths": [
+        "robust",
+        "no calibration needed"
+      ],
+      "weaknesses": [
+        "ignores score magnitude"
+      ]
+    },
+    {
+      "concept": "Cross-Encoder Reranker",
+      "type": "reranking",
+      "description": "Full attention over (query, document) joint encoding. Slower than bi-encoder but more accurate. Used in second-stage re-ranking of top-50 candidates.",
+      "strengths": [
+        "highest precision",
+        "deep interaction"
+      ],
+      "weaknesses": [
+        "cannot index offline",
+        "high inference latency at scale"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+BM25 is a sparse retrieval method using term and document frequency.  Reciprocal Rank Fusion merges ranked lists without requiring score normalisation. BM25 is a sparse retrieval method using term and document frequency.
+
+Dense retrieval encodes text as vectors and uses approximate nearest neighbour search.  Dense retrieval encodes text as vectors and uses approximate nearest neighbour search. Dense retrieval encodes text as vectors and uses approximate nearest neighbour search.
+
+Hybrid retrieval combines sparse BM25 and dense embeddings for better coverage.  Reciprocal Rank Fusion merges ranked lists without requiring score normalisation. Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.
+
+Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.  A cross-encoder re-ranker scores query and document jointly for higher precision. BM25 is a sparse retrieval method using term and document frequency.
+
+A cross-encoder re-ranker scores query and document jointly for higher precision.  Hybrid retrieval combines sparse BM25 and dense embeddings for better coverage. BM25 is a sparse retrieval method using term and document frequency.
+
+BM25 is a sparse retrieval method using term and document frequency.  Dense retrieval encodes text as vectors and uses approximate nearest neighbour search. Hybrid retrieval combines sparse BM25 and dense embeddings for better coverage.
+
+Dense retrieval encodes text as vectors and uses approximate nearest neighbour search.  BM25 is a sparse retrieval method using term and document frequency. BM25 is a sparse retrieval method using term and document frequency.
+
+Hybrid retrieval combines sparse BM25 and dense embeddings for better coverage.  Reciprocal Rank Fusion merges ranked lists without requiring score normalisation. Hybrid retrieval combines sparse BM25 and dense embeddings for better coverage.
+
+Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.  Dense retrieval encodes text as vectors and uses approximate nearest neighbour search. Hybrid retrieval combines sparse BM25 and dense embeddings for better coverage.
+
+A cross-encoder re-ranker scores query and document jointly for higher precision.  A cross-encoder re-ranker scores query and document jointly for higher precision. BM25 is a sparse retrieval method using term and document frequency.
+
+BM25 is a sparse retrieval method using term and document frequency.  A cross-encoder re-ranker scores query and document jointly for higher precision. Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.
+
+Dense retrieval encodes text as vectors and uses approximate nearest neighbour search.  Dense retrieval encodes text as vectors and uses approximate nearest neighbour search. BM25 is a sparse retrieval method using term and document frequency.
+
+Hybrid retrieval combines sparse BM25 and dense embeddings for better coverage.  A cross-encoder re-ranker scores query and document jointly for higher precision. Dense retrieval encodes text as vectors and uses approximate nearest neighbour search.
+
+Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.  BM25 is a sparse retrieval method using term and document frequency. BM25 is a sparse retrieval method using term and document frequency.
+
+A cross-encoder re-ranker scores query and document jointly for higher precision.  A cross-encoder re-ranker scores query and document jointly for higher precision. Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.
+
+BM25 is a sparse retrieval method using term and document frequency.  A cross-encoder re-ranker scores query and document jointly for higher precision. Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.
+
+Dense retrieval encodes text as vectors and uses approximate nearest neighbour search.  Hybrid retrieval combines sparse BM25 and dense embeddings for better coverage. A cross-encoder re-ranker scores query and document jointly for higher precision.
+
+Hybrid retrieval combines sparse BM25 and dense embeddings for better coverage.  Dense retrieval encodes text as vectors and uses approximate nearest neighbour search. Hybrid retrieval combines sparse BM25 and dense embeddings for better coverage.
+
+Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.  A cross-encoder re-ranker scores query and document jointly for higher precision. Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.
+
+A cross-encoder re-ranker scores query and document jointly for higher precision.  A cross-encoder re-ranker scores query and document jointly for higher precision. Hybrid retrieval combines sparse BM25 and dense embeddings for better coverage.
+
+BM25 is a sparse retrieval method using term and document frequency.  Reciprocal Rank Fusion merges ranked lists without requiring score normalisation. BM25 is a sparse retrieval method using term and document frequency.
+
+Dense retrieval encodes text as vectors and uses approximate nearest neighbour search.  Dense retrieval encodes text as vectors and uses approximate nearest neighbour search. Dense retrieval encodes text as vectors and uses approximate nearest neighbour search.
+
+Hybrid retrieval combines sparse BM25 and dense embeddings for better coverage.  BM25 is a sparse retrieval method using term and document frequency. Dense retrieval encodes text as vectors and uses approximate nearest neighbour search.
+
+Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.  BM25 is a sparse retrieval method using term and document frequency. Dense retrieval encodes text as vectors and uses approximate nearest neighbour search.
+
+A cross-encoder re-ranker scores query and document jointly for higher precision.  Reciprocal Rank Fusion merges ranked lists without requiring score normalisation. Dense retrieval encodes text as vectors and uses approximate nearest neighbour search.

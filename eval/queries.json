@@ -1,0 +1,42 @@
+[
+  {
+    "query_id": "q1",
+    "text": "how does BM25 sparse retrieval work"
+  },
+  {
+    "query_id": "q2",
+    "text": "what is hybrid retrieval"
+  },
+  {
+    "query_id": "q3",
+    "text": "explain gradient descent optimisation"
+  },
+  {
+    "query_id": "q4",
+    "text": "what is overfitting in machine learning"
+  },
+  {
+    "query_id": "q5",
+    "text": "how does Docker containerisation work"
+  },
+  {
+    "query_id": "q6",
+    "text": "cross-encoder reranker for retrieval precision"
+  },
+  {
+    "query_id": "q7",
+    "text": "transfer learning fine-tuning pretrained models"
+  },
+  {
+    "query_id": "q8",
+    "text": "distributed systems consistency availability CAP theorem"
+  },
+  {
+    "query_id": "q9",
+    "text": "database B-tree index performance"
+  },
+  {
+    "query_id": "q10",
+    "text": "continuous integration automated testing DevOps"
+  }
+]

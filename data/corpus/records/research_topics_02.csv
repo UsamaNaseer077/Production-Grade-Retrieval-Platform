@@ -1,0 +1,101 @@
+topic,subtopic,open_problem,key_paper,maturity
+NLP,scalability,distribution shift,Codex,mature
+RecSys,interpretability,long-range dependencies,ResNet,early
+IR,interpretability,calibration,transformer,production
+MLSys,scalability,distribution shift,ResNet,legacy
+MLSys,robustness,distribution shift,GPT,early
+IR,robustness,sample efficiency,ResNet,research
+IR,scalability,calibration,GPT,production
+Robotics,efficiency,reasoning,BERT,early
+Robotics,interpretability,calibration,transformer,early
+RL,efficiency,long-range dependencies,ResNet,early
+Bioinformatics,interpretability,long-range dependencies,DALL-E,research
+RecSys,scalability,sample efficiency,Codex,production
+Bioinformatics,scalability,distribution shift,CLIP,mature
+CV,efficiency,factual grounding,ResNet,research
+Bioinformatics,robustness,factual grounding,ResNet,production
+RL,robustness,sample efficiency,DALL-E,production
+RecSys,fairness,long-range dependencies,transformer,production
+IR,fairness,sample efficiency,GPT,legacy
+RL,efficiency,sample efficiency,GPT,research
+Robotics,efficiency,calibration,Codex,research
+RecSys,efficiency,factual grounding,CLIP,mature
+RecSys,interpretability,calibration,Codex,research
+CV,fairness,distribution shift,DALL-E,research
+IR,interpretability,distribution shift,ResNet,legacy
+MLSys,scalability,distribution shift,DALL-E,mature
+CV,scalability,factual grounding,transformer,production
+RecSys,scalability,long-range dependencies,CLIP,early
+Bioinformatics,scalability,long-range dependencies,ResNet,mature
+MLSys,scalability,calibration,DALL-E,early
+Bioinformatics,scalability,reasoning,BERT,production
+CV,scalability,distribution shift,Codex,research
+RecSys,interpretability,reasoning,CLIP,legacy
+Robotics,fairness,long-range dependencies,ResNet,research
+MLSys,efficiency,distribution shift,transformer,research
+NLP,interpretability,long-range dependencies,CLIP,production
+MLSys,fairness,factual grounding,DALL-E,research
+Bioinformatics,fairness,sample efficiency,GPT,production
+IR,interpretability,long-range dependencies,transformer,research
+RL,fairness,sample efficiency,BERT,early
+Bioinformatics,fairness,long-range dependencies,GPT,mature
+MLSys,fairness,long-range dependencies,DALL-E,production
+CV,interpretability,long-range dependencies,GPT,research
+NLP,fairness,factual grounding,GPT,research
+MLSys,scalability,distribution shift,CLIP,early
+RL,robustness,calibration,ResNet,legacy
+IR,robustness,long-range dependencies,DALL-E,early
+Bioinformatics,scalability,sample efficiency,BERT,production
+NLP,scalability,distribution shift,DALL-E,research
+RL,scalability,sample efficiency,Codex,production
+CV,efficiency,sample efficiency,BERT,legacy
+CV,robustness,calibration,CLIP,early
+Bioinformatics,interpretability,reasoning,BERT,research
+Robotics,robustness,long-range dependencies,Codex,early
+RecSys,robustness,reasoning,transformer,legacy
+MLSys,fairness,factual grounding,transformer,early
+MLSys,efficiency,calibration,GPT,legacy
+MLSys,fairness,distribution shift,BERT,early
+Robotics,efficiency,long-range dependencies,BERT,production
+Robotics,scalability,reasoning,BERT,research
+RL,interpretability,calibration,GPT,early
+NLP,interpretability,sample efficiency,DALL-E,production
+MLSys,scalability,long-range dependencies,GPT,mature
+Bioinformatics,interpretability,factual grounding,ResNet,production
+RL,robustness,calibration,CLIP,early
+IR,efficiency,long-range dependencies,DALL-E,legacy
+Bioinformatics,robustness,factual grounding,BERT,early
+RecSys,scalability,factual grounding,BERT,early
+NLP,scalability,reasoning,CLIP,production
+CV,fairness,long-range dependencies,transformer,mature
+CV,fairness,sample efficiency,Codex,research
+NLP,fairness,reasoning,CLIP,research
+MLSys,scalability,sample efficiency,ResNet,early
+RL,efficiency,sample efficiency,DALL-E,early
+IR,efficiency,sample efficiency,BERT,mature
+RL,robustness,factual grounding,Codex,mature
+Robotics,interpretability,long-range dependencies,CLIP,production
+NLP,robustness,long-range dependencies,ResNet,early
+RL,scalability,distribution shift,DALL-E,early
+RL,interpretability,distribution shift,Codex,legacy
+Robotics,scalability,long-range dependencies,transformer,mature
+IR,fairness,distribution shift,CLIP,production
+Robotics,efficiency,calibration,transformer,mature
+RecSys,scalability,reasoning,Codex,early
+Bioinformatics,efficiency,distribution shift,CLIP,legacy
+IR,interpretability,calibration,BERT,legacy
+Bioinformatics,fairness,factual grounding,Codex,production
+NLP,fairness,long-range dependencies,DALL-E,production
+NLP,fairness,long-range dependencies,DALL-E,legacy
+CV,scalability,sample efficiency,Codex,early
+RL,robustness,long-range dependencies,CLIP,early
+CV,interpretability,reasoning,ResNet,legacy
+RL,fairness,reasoning,DALL-E,mature
+Robotics,scalability,sample efficiency,ResNet,early
+MLSys,robustness,factual grounding,Codex,production
+RecSys,interpretability,sample efficiency,Codex,research
+CV,interpretability,long-range dependencies,ResNet,legacy
+MLSys,robustness,reasoning,Codex,mature
+NLP,scalability,long-range dependencies,CLIP,production
+IR,scalability,distribution shift,BERT,legacy
+NLP,scalability,sample efficiency,GPT,legacy

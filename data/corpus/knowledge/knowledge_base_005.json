@@ -1,0 +1,60 @@
+{
+  "id": "kb_005",
+  "domain": "physics",
+  "entries": [
+    {
+      "term": "Bayes theorem",
+      "definition": "A framework for updating beliefs given new evidence.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "sharding",
+      "definition": "A vector that remains collinear after a linear transformation.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "fault tolerance",
+      "definition": "A mathematical operator that iteratively updates model parameters.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "backpressure",
+      "definition": "A mechanism for computing context-dependent representations.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "attention",
+      "definition": "A framework for updating beliefs given new evidence.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "availability",
+      "definition": "An operation that computes a weighted sum over a sliding window.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    }
+  ]
+}

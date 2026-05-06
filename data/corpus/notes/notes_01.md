@@ -1,0 +1,26 @@
+# Chemistry — Study Notes
+
+## Overview
+
+Electrochemistry studies electron transfer reactions at electrode-electrolyte interfaces. Galvanic cells convert chemical energy to electrical energy via spontaneous redox reactions. The Nernst equation relates cell potential to ion concentrations. Lithium-ion batteries store energy in electrochemical potential between graphite anodes and lithium metal oxide cathodes; capacity is measured in milliampere-hours per gram.
+
+### Details
+
+Electrochemistry studies electron transfer reactions at electrode-electrolyte interfaces. Galvanic cells convert chemical energy to electrical energy via spontaneous redox reactions.
+
+## Key Concepts
+
+Catalysis lowers the activation energy of chemical reactions without being consumed. Heterogeneous catalysts (platinum, palladium) adsorb reactants onto active surface sites. Enzymes are biological catalysts that achieve extraordinary specificity and rate acceleration through substrate binding in active sites. Zeolites are microporous aluminosilicates used as acid catalysts in petroleum refining.
+
+### Details
+
+Catalysis lowers the activation energy of chemical reactions without being consumed. Heterogeneous catalysts (platinum, palladium) adsorb reactants onto active surface sites.
+
+## Implementation Details
+
+Spectroscopy characterises molecules by their interaction with electromagnetic radiation. IR spectroscopy identifies functional groups by characteristic absorption frequencies. NMR spectroscopy determines molecular structure from nuclear spin resonances. Mass spectrometry measures mass-to-charge ratios of ionised molecules, identifying compound identities and isotope distributions. X-ray crystallography resolves 3D atomic structures by analysing diffraction patterns.
+
+### Details
+
+Spectroscopy characterises molecules by their interaction with electromagnetic radiation. IR spectroscopy identifies functional groups by characteristic absorption frequencies.
+

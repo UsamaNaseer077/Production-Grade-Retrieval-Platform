@@ -1,0 +1,110 @@
+# ── Production stack (million-document scale) ─────────────────────────────────
+#
+# Architecture:
+#   Nginx (port 80/443, rate-limited)
+#     └─► app1 :8001  ─┐
+#     └─► app2 :8002  ─┤── shared NFS/EFS volume (indexes + cache + memory)
+#     └─► app3 :8003  ─┘
+#                        └── Ollama :11434  (GPU node recommended)
+#
+# Scaling beyond this file
+# ─────────────────────────
+# For 10M+ documents:
+#   • Replace FAISS  → Qdrant   (distributed, horizontal sharding)
+#   • Replace BM25   → Elasticsearch (distributed inverted index)
+#   • Replace SQLite → PostgreSQL + pgvector (persistent + semantic LTM)
+#   • Replace disk cache → Redis Cluster (sub-ms embedding lookup)
+#   • Shard indexes by document domain / date namespace
+#
+# Usage:
+#   docker compose -f docker-compose.prod.yml up -d --scale app=3
+
+version: "3.9"
+
+x-app: &app-base
+  build:
+    context: ..
+    dockerfile: deployment/Dockerfile
+  volumes:
+    - app_data:/app/data
+    - ../prompts:/app/prompts
+    - ../eval:/app/eval
+  environment:
+    - PYTHONPATH=/app
+    - OLLAMA_HOST=http://ollama:11434
+    - WORKERS=4                    # adjust to vCPU count
+  depends_on:
+    ollama:
+      condition: service_healthy
+  restart: unless-stopped
+  healthcheck:
+    test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+    interval: 20s
+    timeout: 8s
+    retries: 3
+
+services:
+
+  # ── load balancer ────────────────────────────────────────────────────────────
+  nginx:
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - app1
+      - app2
+      - app3
+    restart: unless-stopped
+
+  # ── app replicas ─────────────────────────────────────────────────────────────
+  app1:
+    <<: *app-base
+    ports: ["8001:8000"]
+
+  app2:
+    <<: *app-base
+    ports: ["8002:8000"]
+
+  app3:
+    <<: *app-base
+    ports: ["8003:8000"]
+
+  # ── LLM server ───────────────────────────────────────────────────────────────
+  # For GPU: add `deploy.resources.reservations.devices` with NVIDIA runtime
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    # Uncomment for GPU:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+  # ── optional: Redis embedding cache (replaces disk cache for multi-node) ─────
+  redis:
+    image: redis:7-alpine
+    command: redis-server --maxmemory 4gb --maxmemory-policy allkeys-lru
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+
+volumes:
+  app_data:
+  ollama_models:
+  redis_data:

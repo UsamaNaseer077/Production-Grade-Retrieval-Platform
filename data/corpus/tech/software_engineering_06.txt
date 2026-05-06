@@ -1,0 +1,13 @@
+# Software Engineering — Part 6
+
+Observability in production requires three pillars: metrics (time-series counters/gauges via Prometheus), logs (structured JSON via ELK or Loki), and traces (distributed spans via Jaeger). The USE method (Utilisation, Saturation, Errors) guides resource analysis; the RED method (Rate, Errors, Duration) guides service health. SLOs bound acceptable latency percentiles and error rates.
+
+Clean Architecture organises code in concentric rings: entities (business rules), use cases (application logic), interface adapters (controllers/presenters), and infrastructure (databases, frameworks). Dependencies point inward; outer layers depend on inner abstractions not implementations. This decouples business logic from framework details, enabling independent testing of each layer.
+
+API versioning strategies include URL path versioning (/v1/resource), header versioning (Accept: application/vnd.api+json;version=1), and query parameter versioning (?v=1). Semantic versioning uses MAJOR.MINOR.PATCH to communicate breaking changes. OpenAPI / Swagger generates interactive documentation from annotated route handlers.
+
+Test-driven development (TDD) writes tests before implementation: red (failing test), green (minimal implementation), refactor (clean code). Tests serve as living documentation and prevent regression. Property-based testing (Hypothesis, QuickCheck) generates random inputs to find edge cases that hand-written tests miss. Mutation testing checks test suite quality by introducing deliberate bugs.
+
+Mutation testing checks test suite quality by introducing deliberate bugs. This decouples business logic from framework details, enabling independent testing of each layer. Dependencies point inward; outer layers depend on inner abstractions not implementations. Clean Architecture organises code in concentric rings: entities (business rules), use cases (application logic), interface adapters (controllers/presenters), and infrastructure (databases, frameworks). Semantic versioning uses MAJOR. PATCH to communicate breaking changes. Tests serve as living documentation and prevent regression.
+
+OpenAPI / Swagger generates interactive documentation from annotated route handlers. Semantic versioning uses MAJOR. The USE method (Utilisation, Saturation, Errors) guides resource analysis; the RED method (Rate, Errors, Duration) guides service health. Test-driven development (TDD) writes tests before implementation: red (failing test), green (minimal implementation), refactor (clean code). PATCH to communicate breaking changes. SLOs bound acceptable latency percentiles and error rates. Tests serve as living documentation and prevent regression.

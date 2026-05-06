@@ -1,0 +1,16 @@
+term,definition,domain
+BM25,BM25 is a sparse retrieval method using term and document frequency.,retrieval
+Dense,Dense retrieval encodes text as vectors and uses approximate nearest neighbour search.,retrieval
+Hybrid,Hybrid retrieval combines sparse BM25 and dense embeddings for better coverage.,retrieval
+Reciprocal,Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.,retrieval
+A,A cross-encoder re-ranker scores query and document jointly for higher precision.,retrieval
+Gradient,Gradient descent minimises a loss function by iteratively updating model weights.,machine_learning
+Overfitting,Overfitting is when a model memorises training data but fails on unseen examples.,machine_learning
+Transfer,Transfer learning reuses pre-trained model weights for a new downstream task.,machine_learning
+Regularisation,Regularisation penalises large weights to reduce overfitting and improve generalisation.,machine_learning
+The,The bias-variance trade-off describes the tension between model complexity and fit.,machine_learning
+Continuous,Continuous integration tests code changes automatically on every commit.,software_engineering
+Docker,Docker packages applications with dependencies for reproducible deployments.,software_engineering
+Observability,"Observability in distributed systems relies on metrics, logs, and traces.",software_engineering
+Database,Database indexing creates auxiliary structures to accelerate query performance.,software_engineering
+API,API versioning allows backward-compatible changes while supporting older clients.,software_engineering

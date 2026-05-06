@@ -1,0 +1,24 @@
+{
+  "name": "chunking_strategies",
+  "entries": [
+    {
+      "strategy": "parent_child",
+      "child_size": 256,
+      "parent_size": 1024,
+      "description": "Embed small child chunks; return larger parent for context. Best for long documents where precision matters more than context.",
+      "recommended_for": "RAG, question answering"
+    },
+    {
+      "strategy": "sliding",
+      "overlap": 64,
+      "description": "Overlapping fixed windows. Higher recall on long documents at the cost of index size.",
+      "recommended_for": "dense technical documents"
+    },
+    {
+      "strategy": "structural",
+      "split_on": "headings",
+      "description": "Split on Markdown H1-H3 boundaries from docling output. Preserves semantic sections.",
+      "recommended_for": "structured documentation, PDFs"
+    }
+  ]
+}

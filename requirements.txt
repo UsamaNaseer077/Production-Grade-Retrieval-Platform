@@ -1,0 +1,60 @@
+# ── Core ML / NLP ─────────────────────────────────────────────────────────────
+sentence-transformers>=2.7.0
+faiss-cpu>=1.8.0
+rank-bm25>=0.2.2
+scikit-learn>=1.4.0
+numpy>=1.26.0
+pandas>=2.0.0
+torch>=2.2.0
+
+# ── Document ingestion ────────────────────────────────────────────────────────
+docling>=2.5.0
+pypdf>=4.0.0
+python-docx>=1.1.0
+python-pptx>=0.6.21      # PowerPoint (.pptx) fallback loader
+openpyxl>=3.1.0           # Excel (.xlsx/.xls) fallback loader
+lxml>=5.0.0               # XML parsing (fast; regex fallback still works without it)
+striprtf>=0.0.26          # RTF (.rtf) text extraction
+ebooklib>=0.18            # EPUB (.epub) as alternative to docling
+odfpy>=1.4.1              # ODT (.odt) fallback (LibreOffice format)
+
+# ── LangChain + LLM ───────────────────────────────────────────────────────────
+langchain>=0.2.0
+langchain-community>=0.2.0
+langchain-core>=0.2.0
+ollama>=0.2.0
+
+# ── LLM backends (install the ones you use) ───────────────────────────────────
+openai>=1.30.0            # openai backend   — requires OPENAI_API_KEY
+anthropic>=0.25.0         # anthropic backend — requires ANTHROPIC_API_KEY
+huggingface-hub>=0.23.0   # huggingface backend — requires HF_API_TOKEN
+# transformers + accelerate are already in Core ML above; they also power
+# the local "transformers" backend (no API key, downloads model on first use)
+
+# ── API ───────────────────────────────────────────────────────────────────────
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.7.0
+pydantic-settings>=2.3.0
+python-multipart>=0.0.9
+aiofiles>=23.0.0
+
+# ── Storage / caching ─────────────────────────────────────────────────────────
+redis>=5.0.0          # optional — caching & session memory
+aioredis>=2.0.0       # optional — async redis
+
+# ── Observability ─────────────────────────────────────────────────────────────
+structlog>=24.0.0
+prometheus-client>=0.20.0
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+tqdm>=4.66.0
+rich>=13.7.0
+python-dotenv>=1.0.0
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+
+# ── PDF report builder ────────────────────────────────────────────────────────
+reportlab>=4.0.0

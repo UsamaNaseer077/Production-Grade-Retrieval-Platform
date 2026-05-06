@@ -1,0 +1,39 @@
+{
+  "name": "llm_backends",
+  "entries": [
+    {
+      "backend": "Ollama",
+      "type": "local",
+      "models": [
+        "llama3.2",
+        "mistral",
+        "phi3",
+        "gemma"
+      ],
+      "notes": "Requires `ollama serve`. Free, private, no API key.",
+      "use_case": "development, air-gapped environments"
+    },
+    {
+      "backend": "OpenAI",
+      "type": "cloud",
+      "models": [
+        "gpt-4o",
+        "gpt-4o-mini",
+        "gpt-3.5-turbo"
+      ],
+      "notes": "Requires OPENAI_API_KEY. Best quality at cost.",
+      "use_case": "production, high-quality answers"
+    },
+    {
+      "backend": "Anthropic",
+      "type": "cloud",
+      "models": [
+        "claude-3-haiku",
+        "claude-3-sonnet",
+        "claude-3-opus"
+      ],
+      "notes": "Requires ANTHROPIC_API_KEY. Strong instruction following.",
+      "use_case": "production, safety-critical applications"
+    }
+  ]
+}

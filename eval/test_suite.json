@@ -1,0 +1,422 @@
+{
+  "version": "2.0",
+  "description": "Full system test suite \u2014 inputs, expected outputs, and eval thresholds for every architectural layer.",
+  "thresholds": {
+    "recall_at_1_min": 0.2,
+    "recall_at_5_min": 0.7,
+    "mrr_min": 0.5,
+    "embed_latency_p95_max_ms": 200,
+    "dense_latency_p95_max_ms": 300,
+    "bm25_latency_p95_max_ms": 50,
+    "rerank_latency_p95_max_ms": 600,
+    "llm_latency_p95_max_ms": 30000,
+    "total_retrieval_p95_max_ms": 1000,
+    "self_check_min_score": 0.1,
+    "cache_hit_rate_warm_min": 0.8
+  },
+  "queries": [
+    {
+      "query_id": "q001",
+      "text": "how does BM25 sparse retrieval work",
+      "category": "retrieval_concepts",
+      "difficulty": "easy",
+      "expected_topics": [
+        "BM25",
+        "term frequency",
+        "document frequency",
+        "sparse"
+      ],
+      "expected_answer_keywords": [
+        "BM25",
+        "term",
+        "frequency"
+      ],
+      "relevant_doc_patterns": [
+        "retrieval"
+      ],
+      "session_id": "test_session_a",
+      "use_llm": true
+    },
+    {
+      "query_id": "q002",
+      "text": "what is hybrid retrieval and how does it combine BM25 with dense search",
+      "category": "retrieval_concepts",
+      "difficulty": "medium",
+      "expected_topics": [
+        "hybrid",
+        "BM25",
+        "dense",
+        "RRF",
+        "fusion"
+      ],
+      "expected_answer_keywords": [
+        "hybrid",
+        "dense",
+        "sparse"
+      ],
+      "relevant_doc_patterns": [
+        "retrieval"
+      ],
+      "session_id": "test_session_a",
+      "use_llm": true
+    },
+    {
+      "query_id": "q003",
+      "text": "explain gradient descent and how it minimises a loss function",
+      "category": "machine_learning",
+      "difficulty": "easy",
+      "expected_topics": [
+        "gradient descent",
+        "loss function",
+        "weights",
+        "minimise"
+      ],
+      "expected_answer_keywords": [
+        "gradient",
+        "loss",
+        "weights"
+      ],
+      "relevant_doc_patterns": [
+        "machine_learning"
+      ],
+      "session_id": "test_session_b",
+      "use_llm": true
+    },
+    {
+      "query_id": "q004",
+      "text": "what is overfitting and how does regularisation prevent it",
+      "category": "machine_learning",
+      "difficulty": "medium",
+      "expected_topics": [
+        "overfitting",
+        "regularisation",
+        "generalisation",
+        "training data"
+      ],
+      "expected_answer_keywords": [
+        "overfitting",
+        "generalise",
+        "regularisation"
+      ],
+      "relevant_doc_patterns": [
+        "machine_learning"
+      ],
+      "session_id": "test_session_b",
+      "use_llm": true
+    },
+    {
+      "query_id": "q005",
+      "text": "how does Docker containerisation work for reproducible deployments",
+      "category": "software_engineering",
+      "difficulty": "easy",
+      "expected_topics": [
+        "Docker",
+        "container",
+        "deployment",
+        "dependencies"
+      ],
+      "expected_answer_keywords": [
+        "Docker",
+        "container",
+        "deployment"
+      ],
+      "relevant_doc_patterns": [
+        "software_engineering"
+      ],
+      "session_id": "test_session_c",
+      "use_llm": true
+    },
+    {
+      "query_id": "q006",
+      "text": "what is transfer learning and when should I use it",
+      "category": "machine_learning",
+      "difficulty": "medium",
+      "expected_topics": [
+        "transfer learning",
+        "pre-trained",
+        "downstream",
+        "weights"
+      ],
+      "expected_answer_keywords": [
+        "transfer",
+        "pre-trained",
+        "downstream"
+      ],
+      "relevant_doc_patterns": [
+        "machine_learning"
+      ],
+      "session_id": "test_session_b",
+      "use_llm": true
+    },
+    {
+      "query_id": "q007",
+      "text": "how does a cross-encoder reranker improve retrieval precision",
+      "category": "retrieval_concepts",
+      "difficulty": "hard",
+      "expected_topics": [
+        "cross-encoder",
+        "rerank",
+        "precision",
+        "query",
+        "document"
+      ],
+      "expected_answer_keywords": [
+        "cross-encoder",
+        "rerank",
+        "precision"
+      ],
+      "relevant_doc_patterns": [
+        "retrieval"
+      ],
+      "session_id": "test_session_a",
+      "use_llm": true
+    },
+    {
+      "query_id": "q008",
+      "text": "what does observability mean in distributed systems",
+      "category": "software_engineering",
+      "difficulty": "medium",
+      "expected_topics": [
+        "observability",
+        "metrics",
+        "logs",
+        "traces",
+        "distributed"
+      ],
+      "expected_answer_keywords": [
+        "metrics",
+        "logs",
+        "traces"
+      ],
+      "relevant_doc_patterns": [
+        "software_engineering"
+      ],
+      "session_id": "test_session_c",
+      "use_llm": false
+    },
+    {
+      "query_id": "q009",
+      "text": "what is the bias-variance tradeoff in machine learning models",
+      "category": "machine_learning",
+      "difficulty": "hard",
+      "expected_topics": [
+        "bias",
+        "variance",
+        "tradeoff",
+        "complexity",
+        "generalise"
+      ],
+      "expected_answer_keywords": [
+        "bias",
+        "variance",
+        "tradeoff"
+      ],
+      "relevant_doc_patterns": [
+        "machine_learning"
+      ],
+      "session_id": "test_session_b",
+      "use_llm": true
+    },
+    {
+      "query_id": "q010",
+      "text": "this is a deliberately off-topic question about quantum computing with no relevant context",
+      "category": "adversarial",
+      "difficulty": "adversarial",
+      "expected_topics": [],
+      "expected_answer_keywords": [],
+      "relevant_doc_patterns": [],
+      "session_id": "test_session_d",
+      "use_llm": true,
+      "expect_no_answer": true,
+      "note": "Tests self-check faithfulness \u2014 LLM should admit it cannot answer from context"
+    }
+  ],
+  "qrels": {
+    "q001": [
+      "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_3",
+      "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_0",
+      "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_2"
+    ],
+    "q002": [
+      "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_1",
+      "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_0",
+      "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_3"
+    ],
+    "q003": [
+      "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_3",
+      "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_0",
+      "4cc8a84d64a6a5146a1c25d9f3e922c4818a537169a9ea158813e92de1d8d334_0_1"
+    ],
+    "q004": [
+      "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_0",
+      "4cc8a84d64a6a5146a1c25d9f3e922c4818a537169a9ea158813e92de1d8d334_0_0",
+      "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_2"
+    ],
+    "q005": [
+      "b202289156087e05af8db1161ee5b47dfafe26f7ee182c5337da979e96f7eb1c_0_1",
+      "b202289156087e05af8db1161ee5b47dfafe26f7ee182c5337da979e96f7eb1c_0_0",
+      "b202289156087e05af8db1161ee5b47dfafe26f7ee182c5337da979e96f7eb1c_0_2"
+    ],
+    "q006": [
+      "b4a76bca053880a7bdad507fde25ff84856e34135ac80f1b00ada601f1fb2b8e_r7_0_0",
+      "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_1",
+      "dfc0156634cd86cc9ca973a815ecd8936353ba61a668e720003c036e73fa2c22_0_0"
+    ],
+    "q007": [
+      "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_2",
+      "bf241fe3c023e2083ca816f4a876e74b6e7c0454101e8d774491311e36de8dfc_0_0",
+      "5bcb8f4f5b299e44e39b2663a45e7e833f4a8eb51bd575efbb3bc00139026d99_0_0"
+    ],
+    "q008": [
+      "b4a76bca053880a7bdad507fde25ff84856e34135ac80f1b00ada601f1fb2b8e_r12_0_0",
+      "b202289156087e05af8db1161ee5b47dfafe26f7ee182c5337da979e96f7eb1c_0_2",
+      "b202289156087e05af8db1161ee5b47dfafe26f7ee182c5337da979e96f7eb1c_0_0"
+    ],
+    "q009": [
+      "b4a76bca053880a7bdad507fde25ff84856e34135ac80f1b00ada601f1fb2b8e_r9_0_0",
+      "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_2",
+      "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_3"
+    ],
+    "q010": [
+      "3db41136eac33768b1076a0e1c1555c7767fb6ab24a5b2b064d82bd1fdc3a75b_0_1",
+      "a64289850faa19ac77d7bad8fb368b4ec838ba4033fadf57180be652ecb8803d_0_0",
+      "1e06308adbf0979592750fa9c8e289e774df764459f367d6cbd9a826a130507d_0_0"
+    ]
+  },
+  "ingestion_test_formats": [
+    {
+      "ext": ".txt",
+      "description": "Plain text \u2014 direct UTF-8 read"
+    },
+    {
+      "ext": ".csv",
+      "description": "CSV \u2014 one Document per row"
+    },
+    {
+      "ext": ".pdf",
+      "description": "PDF \u2014 docling \u2192 pypdf fallback"
+    },
+    {
+      "ext": ".docx",
+      "description": "Word document \u2014 docling \u2192 python-docx"
+    },
+    {
+      "ext": ".pptx",
+      "description": "PowerPoint \u2014 docling \u2192 python-pptx"
+    },
+    {
+      "ext": ".xlsx",
+      "description": "Excel \u2014 docling \u2192 openpyxl \u2192 pandas"
+    },
+    {
+      "ext": ".html",
+      "description": "HTML \u2014 docling \u2192 tag-strip fallback"
+    },
+    {
+      "ext": ".xml",
+      "description": "XML \u2014 lxml \u2192 tag-strip fallback"
+    },
+    {
+      "ext": ".json",
+      "description": "JSON \u2014 flattened key-value text"
+    },
+    {
+      "ext": ".md",
+      "description": "Markdown \u2014 direct read"
+    },
+    {
+      "ext": ".epub",
+      "description": "EPUB e-book \u2014 docling \u2192 zip/html fallback"
+    },
+    {
+      "ext": ".rtf",
+      "description": "Rich text \u2014 striprtf \u2192 control-word strip"
+    },
+    {
+      "ext": ".png",
+      "description": "Image OCR \u2014 docling + tesseract"
+    },
+    {
+      "ext": ".jpg",
+      "description": "Image OCR \u2014 docling + tesseract"
+    }
+  ],
+  "memory_tests": [
+    {
+      "test_id": "mem_001",
+      "description": "STM: write 3 turns, read back, check history preserved",
+      "session_id": "mem_test_session",
+      "turns": [
+        {
+          "role": "user",
+          "content": "What is BM25?"
+        },
+        {
+          "role": "assistant",
+          "content": "BM25 is a ranking function."
+        },
+        {
+          "role": "user",
+          "content": "How is it different from dense retrieval?"
+        }
+      ]
+    },
+    {
+      "test_id": "mem_002",
+      "description": "LTM: store Q&A, search by keyword, expect recall",
+      "session_id": "ltm_test_session",
+      "qa_pairs": [
+        {
+          "question": "What is reciprocal rank fusion?",
+          "answer": "RRF merges ranked lists using rank positions without score normalisation.",
+          "source_ids": [
+            "chunk_retrieval_01"
+          ]
+        }
+      ],
+      "search_query": "rank fusion merging lists",
+      "expect_hit": true
+    }
+  ],
+  "cache_tests": [
+    {
+      "test_id": "cache_001",
+      "description": "Cold miss: first encode of a text should be a cache miss",
+      "text": "This is a unique test sentence for cache validation 12345",
+      "expect_hit": false
+    },
+    {
+      "test_id": "cache_002",
+      "description": "Warm hit: re-encoding same text should be a cache hit and faster",
+      "text": "This is a unique test sentence for cache validation 12345",
+      "expect_hit": true,
+      "expect_speedup": true
+    }
+  ],
+  "self_check_tests": [
+    {
+      "test_id": "sc_001",
+      "description": "Grounded answer \u2014 high token overlap with context",
+      "context": "BM25 is a sparse retrieval method based on term frequency and inverse document frequency. It scores documents by how often query terms appear relative to their frequency across all documents.",
+      "answer": "BM25 uses term frequency and inverse document frequency to score documents.",
+      "expect_grounded": true,
+      "expect_verdict": "pass"
+    },
+    {
+      "test_id": "sc_002",
+      "description": "Ungrounded answer \u2014 quantum topic injected, context is about retrieval",
+      "context": "BM25 is a sparse retrieval method based on term frequency and inverse document frequency.",
+      "answer": "Quantum entanglement allows particles to instantaneously affect each other across vast distances, which was described by Einstein as spooky action at a distance.",
+      "expect_grounded": false,
+      "expect_verdict": "fail"
+    },
+    {
+      "test_id": "sc_003",
+      "description": "Partial grounding \u2014 some claims supported, some not",
+      "context": "Dense retrieval encodes text as vectors for approximate nearest neighbour search.",
+      "answer": "Dense retrieval uses vectors. It was invented in 2021 by researchers at Google.",
+      "expect_grounded": true,
+      "expect_verdict": "warn"
+    }
+  ]
+}

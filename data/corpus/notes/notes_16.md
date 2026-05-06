@@ -1,0 +1,34 @@
+# Information Retrieval — Study Notes
+
+## Overview
+
+BM25 (Best Match 25) is a probabilistic ranking function used in information retrieval. It extends TF-IDF by incorporating document length normalization and a term saturation parameter k1. The formula scores documents by computing a weighted sum over query terms, where each term's contribution depends on its frequency in the document and the collection. BM25 remains competitive with neural methods on keyword-heavy queries where exact term matching is critical. The okapi variant is the most widely used.
+
+### Details
+
+BM25 (Best Match 25) is a probabilistic ranking function used in information retrieval. It extends TF-IDF by incorporating document length normalization and a term saturation parameter k1.
+
+## Key Concepts
+
+Dense retrieval encodes queries and documents into continuous vector embeddings using transformer models. The bi-encoder architecture encodes query and document independently, enabling offline indexing of all document embeddings. At query time, a fast approximate nearest-neighbour search (e.g. FAISS HNSW) finds top-k candidates. Dense retrieval excels at semantic similarity and paraphrase matching but can miss exact keyword matches that BM25 catches trivially.
+
+### Details
+
+Dense retrieval encodes queries and documents into continuous vector embeddings using transformer models. The bi-encoder architecture encodes query and document independently, enabling offline indexing of all document embeddings.
+
+## Implementation Details
+
+Embedding caches store pre-computed vectors keyed by SHA-256(model_tag + text). On restart, only new or changed texts incur inference cost. A sharded directory layout (2-char prefix) prevents inode exhaustion at 1M+ entries. Cache hit rates above 90% are typical after the first full ingest, reducing warm-start latency by 100x vs cold encode.
+
+### Details
+
+Embedding caches store pre-computed vectors keyed by SHA-256(model_tag + text). On restart, only new or changed texts incur inference cost.
+
+## Trade-offs and Limitations
+
+Hybrid retrieval combines sparse BM25 and dense embedding search to capture both lexical and semantic relevance. Reciprocal Rank Fusion (RRF) merges the two ranked lists without requiring score normalisation: each candidate's score is the sum of 1/(k+rank) across both lists, where k=60 is a smoothing constant. RRF consistently outperforms individual retrievers and weighted score combinations in head-to-head benchmarks on BEIR.
+
+### Details
+
+Hybrid retrieval combines sparse BM25 and dense embedding search to capture both lexical and semantic relevance. Reciprocal Rank Fusion (RRF) merges the two ranked lists without requiring score normalisation: each candidate's score is the sum of 1/(k+rank) across both lists, where k=60 is a smoothing constant.
+

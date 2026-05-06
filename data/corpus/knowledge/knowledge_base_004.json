@@ -1,0 +1,105 @@
+{
+  "id": "kb_004",
+  "domain": "physics",
+  "entries": [
+    {
+      "term": "Bayes theorem",
+      "definition": "An operation that computes a weighted sum over a sliding window.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "embedding",
+      "definition": "A framework for updating beliefs given new evidence.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "Bayes theorem",
+      "definition": "A vector that remains collinear after a linear transformation.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "pipeline",
+      "definition": "A stochastic process where future state depends only on current state.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "embedding",
+      "definition": "A framework for updating beliefs given new evidence.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "attention",
+      "definition": "A mechanism for computing context-dependent representations.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "eigenvector",
+      "definition": "An operation that computes a weighted sum over a sliding window.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "caching",
+      "definition": "A mathematical operator that iteratively updates model parameters.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "throughput",
+      "definition": "An operation that computes a weighted sum over a sliding window.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "parallelism",
+      "definition": "A stochastic process where future state depends only on current state.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "convolution",
+      "definition": "A stochastic process where future state depends only on current state.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    }
+  ]
+}

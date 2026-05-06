@@ -1,0 +1,51 @@
+{
+  "id": "kb_002",
+  "domain": "operations",
+  "entries": [
+    {
+      "term": "embedding",
+      "definition": "An operation that computes a weighted sum over a sliding window.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "gradient",
+      "definition": "A stochastic process where future state depends only on current state.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "embedding",
+      "definition": "An operation that computes a weighted sum over a sliding window.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "caching",
+      "definition": "A fundamental concept characterising information, uncertainty, and disorder.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "parallelism",
+      "definition": "A mathematical operator that iteratively updates model parameters.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    }
+  ]
+}

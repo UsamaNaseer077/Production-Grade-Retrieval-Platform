@@ -1,0 +1,66 @@
+# ── Local development stack ───────────────────────────────────────────────────
+# Starts: app (single instance) + Ollama
+# Indexes and cache are persisted in ./data via named volume.
+#
+# Usage:
+#   docker compose up --build
+#   docker compose exec app python scripts/run.py generate-data
+#   docker compose exec app python scripts/run.py ingest --dir data/sample_docs
+#   curl http://localhost:8000/health
+
+version: "3.9"
+
+services:
+
+  # ── retrieval API ────────────────────────────────────────────────────────────
+  app:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - app_data:/app/data          # indexes, embedding cache, SQLite memory
+      - ../prompts:/app/prompts     # hot-reload system prompt without rebuild
+      - ../eval:/app/eval           # eval datasets
+    environment:
+      - PYTHONPATH=/app
+      - OLLAMA_HOST=http://ollama:11434
+    depends_on:
+      ollama:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ── Ollama (local open-source LLM server) ────────────────────────────────────
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+
+  # ── model bootstrapper (one-shot) ────────────────────────────────────────────
+  model-pull:
+    image: ollama/ollama:latest
+    depends_on:
+      ollama:
+        condition: service_healthy
+    entrypoint: ["ollama", "pull", "llama3.2"]
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+    restart: "no"
+
+volumes:
+  app_data:
+  ollama_models:

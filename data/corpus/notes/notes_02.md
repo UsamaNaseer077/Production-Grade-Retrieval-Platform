@@ -1,0 +1,26 @@
+# Physics — Study Notes
+
+## Overview
+
+General relativity describes gravity as spacetime curvature caused by mass-energy. The Einstein field equations relate the spacetime metric to the stress-energy tensor. Gravitational waves — ripples in spacetime — were first detected by LIGO in 2015 from a binary black hole merger. Black holes form when mass collapses inside its Schwarzschild radius; the event horizon is the one-way boundary beyond which nothing escapes.
+
+### Details
+
+General relativity describes gravity as spacetime curvature caused by mass-energy. The Einstein field equations relate the spacetime metric to the stress-energy tensor.
+
+## Key Concepts
+
+Thermodynamics governs energy transformations. The first law states energy is conserved; the second law states entropy of an isolated system never decreases. The Carnot engine defines the maximum efficiency of a heat engine between temperatures T_hot and T_cold: η = 1 − T_cold/T_hot. Statistical mechanics derives thermodynamic laws from the probabilistic behaviour of large numbers of particles.
+
+### Details
+
+Thermodynamics governs energy transformations. The first law states energy is conserved; the second law states entropy of an isolated system never decreases.
+
+## Implementation Details
+
+Quantum mechanics describes the behaviour of particles at atomic and subatomic scales. The Schrödinger equation governs how quantum states evolve in time. Wave-particle duality means electrons exhibit interference patterns in double-slit experiments yet arrive as discrete particles. The Heisenberg uncertainty principle bounds the product of position and momentum uncertainties: ΔxΔp ≥ ℏ/2.
+
+### Details
+
+Quantum mechanics describes the behaviour of particles at atomic and subatomic scales. The Schrödinger equation governs how quantum states evolve in time.
+

@@ -1,0 +1,51 @@
+{
+  "id": "kb_006",
+  "domain": "physics",
+  "entries": [
+    {
+      "term": "Bayes theorem",
+      "definition": "A mechanism for computing context-dependent representations.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "convolution",
+      "definition": "A framework for updating beliefs given new evidence.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "fault tolerance",
+      "definition": "A framework for updating beliefs given new evidence.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "indexing",
+      "definition": "A framework for updating beliefs given new evidence.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "fault tolerance",
+      "definition": "A mechanism for computing context-dependent representations.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    }
+  ]
+}

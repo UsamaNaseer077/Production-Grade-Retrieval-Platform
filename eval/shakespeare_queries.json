@@ -1,0 +1,92 @@
+[
+  {
+    "query_id": "shk_001",
+    "text": "To be or not to be that is the question",
+    "expected_source": "hamlet",
+    "category": "famous_quote"
+  },
+  {
+    "query_id": "shk_002",
+    "text": "Romeo and Juliet love story Montague Capulet",
+    "expected_source": "romeo-and-juliet",
+    "category": "plot"
+  },
+  {
+    "query_id": "shk_003",
+    "text": "Macbeth witches prophecy king of Scotland",
+    "expected_source": "macbeth",
+    "category": "plot"
+  },
+  {
+    "query_id": "shk_004",
+    "text": "Othello jealousy Desdemona Iago handkerchief",
+    "expected_source": "othello",
+    "category": "plot"
+  },
+  {
+    "query_id": "shk_005",
+    "text": "King Lear divides kingdom daughters Cordelia",
+    "expected_source": "king-lear",
+    "category": "plot"
+  },
+  {
+    "query_id": "shk_006",
+    "text": "merchant Venice Shylock pound of flesh bond",
+    "expected_source": "the-merchant-of-venice",
+    "category": "plot"
+  },
+  {
+    "query_id": "shk_007",
+    "text": "midsummer night dream fairy Oberon Titania Puck",
+    "expected_source": "a-midsummer-nights-dream",
+    "category": "plot"
+  },
+  {
+    "query_id": "shk_008",
+    "text": "Prospero magic island tempest Ariel Caliban",
+    "expected_source": "the-tempest",
+    "category": "plot"
+  },
+  {
+    "query_id": "shk_009",
+    "text": "Julius Caesar assassination Brutus conspirators Rome",
+    "expected_source": "julius-caesar",
+    "category": "plot"
+  },
+  {
+    "query_id": "shk_010",
+    "text": "shall I compare thee to a summer's day sonnet",
+    "expected_source": "shakespeares-sonnets",
+    "category": "famous_quote"
+  },
+  {
+    "query_id": "shk_011",
+    "text": "Hamlet prince Denmark ghost father revenge",
+    "expected_source": "hamlet",
+    "category": "plot"
+  },
+  {
+    "query_id": "shk_012",
+    "text": "Twelfth Night Viola disguise Orsino Olivia",
+    "expected_source": "twelfth-night",
+    "category": "plot"
+  },
+  {
+    "query_id": "shk_013",
+    "text": "Henry V battle Agincourt band of brothers",
+    "expected_source": "henry-v",
+    "category": "history"
+  },
+  {
+    "query_id": "shk_014",
+    "text": "taming of the shrew Petruchio Katherine marriage",
+    "expected_source": "the-taming-of-the-shrew",
+    "category": "plot"
+  },
+  {
+    "query_id": "shk_015",
+    "text": "Much Ado About Nothing Beatrice Benedick witty",
+    "expected_source": "much-ado-about-nothing",
+    "category": "plot"
+  }
+]

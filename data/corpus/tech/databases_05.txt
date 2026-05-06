@@ -1,0 +1,13 @@
+# Databases — Part 5
+
+SQL window functions compute aggregate values over a sliding partition of rows without collapsing them. PARTITION BY groups rows; ORDER BY sorts within the partition; the frame clause specifies which rows to include in each aggregate (ROWS BETWEEN, RANGE BETWEEN). Rank, dense_rank, row_number, lead, lag, and cumulative sum are common window functions.
+
+B-tree indexes organise keys in a balanced tree with branching factor B. Searches, inserts, and deletes all run in O(log_B N) I/O operations. The B+ tree variant stores all values in leaf nodes linked in a sorted doubly-linked list, enabling efficient range scans. PostgreSQL, MySQL, and SQLite all use B+ trees as the default index structure.
+
+LSM trees (Log-Structured Merge-Trees) write all mutations to an in-memory memtable and an append-only WAL, then periodically flush sorted runs to disk (SSTables). Background compaction merges overlapping runs to bound read amplification. LSM trees excel at write-heavy workloads; RocksDB, LevelDB, and Apache Cassandra use LSM.
+
+Database normalisation eliminates redundancy by decomposing tables into relations with minimal functional dependencies. First normal form requires atomic column values. Second normal form removes partial dependencies on composite primary keys. Third normal form removes transitive dependencies. BCNF (Boyce-Codd) is a stricter variant. Over-normalisation can hurt query performance; denormalisation trades space for read speed.
+
+B-tree indexes organise keys in a balanced tree with branching factor B. Third normal form removes transitive dependencies. Rank, dense_rank, row_number, lead, lag, and cumulative sum are common window functions. SQL window functions compute aggregate values over a sliding partition of rows without collapsing them. LSM trees excel at write-heavy workloads; RocksDB, LevelDB, and Apache Cassandra use LSM. BCNF (Boyce-Codd) is a stricter variant. PARTITION BY groups rows; ORDER BY sorts within the partition; the frame clause specifies which rows to include in each aggregate (ROWS BETWEEN, RANGE BETWEEN). Searches, inserts, and deletes all run in O(log_B N) I/O operations.
+
+Rank, dense_rank, row_number, lead, lag, and cumulative sum are common window functions. Second normal form removes partial dependencies on composite primary keys. PostgreSQL, MySQL, and SQLite all use B+ trees as the default index structure. First normal form requires atomic column values. SQL window functions compute aggregate values over a sliding partition of rows without collapsing them. BCNF (Boyce-Codd) is a stricter variant. Background compaction merges overlapping runs to bound read amplification. Searches, inserts, and deletes all run in O(log_B N) I/O operations.

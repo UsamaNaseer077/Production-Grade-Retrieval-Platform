@@ -1,0 +1,2141 @@
+{
+  "metadata": {
+    "timestamp": "2026-05-06T21:12:46.628891+00:00",
+    "platform_version": "2.0.0",
+    "python_version": "3.14.4",
+    "test_suite": "eval/test_suite.json",
+    "document_dir": "data/sample_docs",
+    "config": {
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "chunk_strategy": "parent_child",
+      "child_size": 256,
+      "parent_size": 1024,
+      "top_k_dense": 50,
+      "top_k_sparse": 50,
+      "top_k_rerank": 10,
+      "rrf_k": 60,
+      "llm_model": "auto",
+      "llm_backend": "auto"
+    }
+  },
+  "index_stats": {
+    "vector_index_size": 4724,
+    "vector_index_dim": 384,
+    "bm25_index_size": 4724,
+    "hash_store_entries": 223,
+    "ltm_records_before": 10,
+    "stm_active_sessions": 0,
+    "embedding_cache": {
+      "hits": 0,
+      "misses": 0,
+      "hit_rate": 0.0,
+      "cached_files": 4596
+    },
+    "llm_available": false,
+    "llm_model": "auto",
+    "supported_formats": [
+      ".bmp",
+      ".csv",
+      ".docx",
+      ".epub",
+      ".htm",
+      ".html",
+      ".jpeg",
+      ".jpg",
+      ".json",
+      ".md",
+      ".odt",
+      ".pdf",
+      ".png",
+      ".pptx",
+      ".rtf",
+      ".tif",
+      ".tiff",
+      ".txt",
+      ".webp",
+      ".xls",
+      ".xlsx",
+      ".xml"
+    ]
+  },
+  "ingestion_report": {
+    "total_formats_tested": 14,
+    "passed": 11,
+    "skipped": 3,
+    "failed": 0,
+    "formats": [
+      {
+        "format": ".txt",
+        "description": "Plain text \u2014 direct UTF-8 read",
+        "file_available": true,
+        "status": "ok",
+        "docs_produced": 1,
+        "chunks_produced": 1,
+        "total_chars_extracted": 166,
+        "ingest_latency_ms": 0.12,
+        "sample_text": "BM25 is a sparse retrieval method based on term frequency. Dense retrieval encodes text as vectors. \u2026",
+        "file_size_bytes": 166
+      },
+      {
+        "format": ".csv",
+        "description": "CSV \u2014 one Document per row",
+        "file_available": true,
+        "status": "ok",
+        "docs_produced": 3,
+        "chunks_produced": 3,
+        "total_chars_extracted": 177,
+        "ingest_latency_ms": 0.12,
+        "sample_text": "term: BM25 | definition: Sparse retrieval method | domain: IR",
+        "file_size_bytes": 113
+      },
+      {
+        "format": ".pdf",
+        "description": "PDF \u2014 docling \u2192 pypdf fallback",
+        "file_available": true,
+        "status": "ok",
+        "docs_produced": 1,
+        "chunks_produced": 1,
+        "total_chars_extracted": 167,
+        "ingest_latency_ms": 24.34,
+        "sample_text": "BM25 is a sparse retrieval method based on term frequency.\nDense retrieval encodes text as vectors.\n\u2026",
+        "file_size_bytes": 1491
+      },
+      {
+        "format": ".docx",
+        "description": "Word document \u2014 docling \u2192 python-docx",
+        "file_available": true,
+        "status": "ok",
+        "docs_produced": 1,
+        "chunks_produced": 1,
+        "total_chars_extracted": 184,
+        "ingest_latency_ms": 3.07,
+        "sample_text": "Retrieval Methods\nBM25 is a sparse retrieval method based on term frequency. Dense retrieval encodes\u2026",
+        "file_size_bytes": 36717
+      },
+      {
+        "format": ".pptx",
+        "description": "PowerPoint \u2014 docling \u2192 python-pptx",
+        "file_available": true,
+        "status": "ok",
+        "docs_produced": 1,
+        "chunks_produced": 1,
+        "total_chars_extracted": 184,
+        "ingest_latency_ms": 1.54,
+        "sample_text": "Retrieval Methods\nBM25 is a sparse retrieval method based on term frequency. Dense retrieval encodes\u2026",
+        "file_size_bytes": 28343
+      },
+      {
+        "format": ".xlsx",
+        "description": "Excel \u2014 docling \u2192 openpyxl \u2192 pandas",
+        "file_available": true,
+        "status": "ok",
+        "docs_produced": 3,
+        "chunks_produced": 3,
+        "total_chars_extracted": 214,
+        "ingest_latency_ms": 1.29,
+        "sample_text": "term: BM25 | definition: Sparse retrieval using term frequency | score: 0.9",
+        "file_size_bytes": 4980
+      },
+      {
+        "format": ".html",
+        "description": "HTML \u2014 docling \u2192 tag-strip fallback",
+        "file_available": true,
+        "status": "ok",
+        "docs_produced": 1,
+        "chunks_produced": 1,
+        "total_chars_extracted": 73,
+        "ingest_latency_ms": 0.1,
+        "sample_text": "Retrieval BM25 BM25 is a sparse retrieval method based on term frequency.",
+        "file_size_bytes": 141
+      },
+      {
+        "format": ".xml",
+        "description": "XML \u2014 lxml \u2192 tag-strip fallback",
+        "file_available": true,
+        "status": "ok",
+        "docs_produced": 1,
+        "chunks_produced": 1,
+        "total_chars_extracted": 102,
+        "ingest_latency_ms": 1.76,
+        "sample_text": "Retrieval BM25 is a sparse retrieval method based on term frequency and document frequency statistic\u2026",
+        "file_size_bytes": 161
+      },
+      {
+        "format": ".json",
+        "description": "JSON \u2014 flattened key-value text",
+        "file_available": true,
+        "status": "ok",
+        "docs_produced": 1,
+        "chunks_produced": 1,
+        "total_chars_extracted": 208,
+        "ingest_latency_ms": 0.07,
+        "sample_text": "title: Retrieval Methods\nmethods: [0]: .name: BM25\nmethods: [0]: .type: sparse\nmethods: [0]: .uses: \u2026",
+        "file_size_bytes": 237
+      },
+      {
+        "format": ".md",
+        "description": "Markdown \u2014 direct read",
+        "file_available": true,
+        "status": "ok",
+        "docs_produced": 1,
+        "chunks_produced": 1,
+        "total_chars_extracted": 174,
+        "ingest_latency_ms": 0.04,
+        "sample_text": "# BM25\n\nBM25 is a sparse retrieval method based on term frequency. Dense retrieval encodes text as v\u2026",
+        "file_size_bytes": 174
+      },
+      {
+        "format": ".epub",
+        "description": "EPUB e-book \u2014 docling \u2192 zip/html fallback",
+        "file_available": false,
+        "status": "skipped",
+        "reason": "library not installed"
+      },
+      {
+        "format": ".rtf",
+        "description": "Rich text \u2014 striprtf \u2192 control-word strip",
+        "file_available": true,
+        "status": "ok",
+        "docs_produced": 1,
+        "chunks_produced": 1,
+        "total_chars_extracted": 166,
+        "ingest_latency_ms": 1.02,
+        "sample_text": "BM25 is a sparse retrieval method based on term frequency. Dense retrieval encodes text as vectors. \u2026",
+        "file_size_bytes": 219
+      },
+      {
+        "format": ".png",
+        "description": "Image OCR \u2014 docling + tesseract",
+        "file_available": false,
+        "status": "skipped",
+        "reason": "library not installed"
+      },
+      {
+        "format": ".jpg",
+        "description": "Image OCR \u2014 docling + tesseract",
+        "file_available": false,
+        "status": "skipped",
+        "reason": "library not installed"
+      }
+    ]
+  },
+  "cache_report": {
+    "cold_miss_latency_ms": 59.18,
+    "warm_hit_latency_ms": 0.17,
+    "speedup_factor": 348.1,
+    "tests": [
+      {
+        "test_id": "cache_001",
+        "description": "Cold miss: first encode of a text should be a cache miss",
+        "latency_ms": 59.18,
+        "vector_dim": 384,
+        "expect_hit": false,
+        "cache_stats": {
+          "hits": 0,
+          "misses": 1,
+          "hit_rate": 0.0,
+          "cached_files": 4596
+        }
+      },
+      {
+        "test_id": "cache_002",
+        "description": "Warm hit: re-encoding same text should be a cache hit and faster",
+        "latency_ms": 0.17,
+        "vector_dim": 384,
+        "expect_hit": true,
+        "cache_stats": {
+          "hits": 1,
+          "misses": 1,
+          "hit_rate": 0.5,
+          "cached_files": 4596
+        }
+      }
+    ]
+  },
+  "retrieval_tests": [
+    {
+      "query_id": "q001",
+      "query": "how does BM25 sparse retrieval work",
+      "category": "retrieval_concepts",
+      "difficulty": "easy",
+      "latency_breakdown_ms": {
+        "embed": 0.1,
+        "dense_search": 1.1,
+        "bm25_search": 2.5,
+        "rerank_estimated": 438.1,
+        "total_retrieval": 441.6
+      },
+      "results_returned": 10,
+      "top_10_results": [
+        {
+          "rank": 1,
+          "chunk_id": "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_3",
+          "source": "retrieval.txt",
+          "rrf_score": 0.03128,
+          "dense_rank": 1,
+          "sparse_rank": 5,
+          "text_snippet": "BM25 is a sparse retrieval method using term and document frequency. Reciprocal Rank Fusion merges ranked lists without \u2026",
+          "parent_snippet": "BM25 is a sparse retrieval method using term and document frequency. Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.\u2026"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_0",
+          "source": "retrieval.txt",
+          "rrf_score": 0.03151,
+          "dense_rank": 4,
+          "sparse_rank": 1,
+          "text_snippet": "BM25 is a sparse retrieval method using term and document frequency. Reciprocal Rank Fusion merges ranked lists without \u2026",
+          "parent_snippet": "BM25 is a sparse retrieval method using term and document frequency. Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.\u2026"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_2",
+          "source": "retrieval.txt",
+          "rrf_score": 0.03054,
+          "dense_rank": 5,
+          "sparse_rank": 4,
+          "text_snippet": "is a sparse retrieval method using term and document frequency. BM25 is a sparse retrieval method using term and documen\u2026",
+          "parent_snippet": "BM25 is a sparse retrieval method using term and document frequency. Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.\u2026"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_1",
+          "source": "retrieval.txt",
+          "rrf_score": 0.0315,
+          "dense_rank": 3,
+          "sparse_rank": 2,
+          "text_snippet": "BM25 is a sparse retrieval method using term and document frequency. Hybrid retrieval combines sparse BM25 and dense emb\u2026",
+          "parent_snippet": "BM25 is a sparse retrieval method using term and document frequency. Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.\u2026"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "5194fa86543313753d8730088e3966660e2b4caa0a6e659810d7d535c53f5f72_0_0",
+          "source": "information_retrieval_10.txt",
+          "rrf_score": 0.02422,
+          "dense_rank": 16,
+          "sparse_rank": 28,
+          "text_snippet": "# Information Retrieval \u2014 Part 10\n\nBM25 (Best Match 25) is a probabilistic ranking function used in information retrieva\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 10\n\nBM25 (Best Match 25) is a probabilistic ranking function used in information retrieval. It extends TF-IDF by incorp\u2026"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "b4a76bca053880a7bdad507fde25ff84856e34135ac80f1b00ada601f1fb2b8e_r0_0_0",
+          "source": "glossary.csv",
+          "rrf_score": 0.03279,
+          "dense_rank": 0,
+          "sparse_rank": 0,
+          "text_snippet": "term: BM25 | definition: BM25 is a sparse retrieval method using term and document frequency. | domain: retrieval",
+          "parent_snippet": "term: BM25 | definition: BM25 is a sparse retrieval method using term and document frequency. | domain: retrieval"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "99ac11295414618c568b852c432534b189a62e75b7df4179f26dd12c7ee702ff_0_0",
+          "source": "information_retrieval_05.txt",
+          "rrf_score": 0.02327,
+          "dense_rank": 23,
+          "sparse_rank": 27,
+          "text_snippet": "# Information Retrieval \u2014 Part 5\n\nBM25 (Best Match 25) is a probabilistic ranking function used in information retrieval\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 5\n\nBM25 (Best Match 25) is a probabilistic ranking function used in information retrieval. It extends TF-IDF by incorpo\u2026"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "c5492d62919a5d2242a0b4ba441164be617a25a660c1398fef1577045918a999_0_0",
+          "source": "information_retrieval_06.txt",
+          "rrf_score": 0.02439,
+          "dense_rank": 9,
+          "sparse_rank": 38,
+          "text_snippet": "# Information Retrieval \u2014 Part 6\n\nHybrid retrieval combines sparse BM25 and dense embedding search to capture both lexic\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 6\n\nHybrid retrieval combines sparse BM25 and dense embedding search to capture both lexical and semantic relevance. Rec\u2026"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "0844b6178f76e74b86d41af026a5dab42e32f55a7a3d21f5f61d38aef25cf0f7_0_0",
+          "source": "notes_10.md",
+          "rrf_score": 0.02491,
+          "dense_rank": 35,
+          "sparse_rank": 8,
+          "text_snippet": "# Information Retrieval \u2014 Study Notes\n\n## Overview\n\nHybrid retrieval combines sparse BM25 and dense embedding search to \u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Study Notes\n\n## Overview\n\nHybrid retrieval combines sparse BM25 and dense embedding search to capture both lexical and seman\u2026"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "185eef60529600fcd17f350213cadb31fa306a9480106e409b246a89f1f30c90_0_0",
+          "source": "information_retrieval_08.txt",
+          "rrf_score": 0.02048,
+          "dense_rank": 31,
+          "sparse_rank": 43,
+          "text_snippet": "# Information Retrieval \u2014 Part 8\n\nDense retrieval encodes queries and documents into continuous vector embeddings using \u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 8\n\nDense retrieval encodes queries and documents into continuous vector embeddings using transformer models. The bi-enc\u2026"
+        }
+      ]
+    },
+    {
+      "query_id": "q002",
+      "query": "what is hybrid retrieval and how does it combine BM25 with dense search",
+      "category": "retrieval_concepts",
+      "difficulty": "medium",
+      "latency_breakdown_ms": {
+        "embed": 0.3,
+        "dense_search": 0.2,
+        "bm25_search": 5.2,
+        "rerank_estimated": 821.2,
+        "total_retrieval": 826.6
+      },
+      "results_returned": 10,
+      "top_10_results": [
+        {
+          "rank": 1,
+          "chunk_id": "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_1",
+          "source": "retrieval.txt",
+          "rrf_score": 0.032,
+          "dense_rank": 2,
+          "sparse_rank": 1,
+          "text_snippet": "BM25 is a sparse retrieval method using term and document frequency. Hybrid retrieval combines sparse BM25 and dense emb\u2026",
+          "parent_snippet": "BM25 is a sparse retrieval method using term and document frequency. Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.\u2026"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_0",
+          "source": "retrieval.txt",
+          "rrf_score": 0.03202,
+          "dense_rank": 3,
+          "sparse_rank": 0,
+          "text_snippet": "BM25 is a sparse retrieval method using term and document frequency. Reciprocal Rank Fusion merges ranked lists without \u2026",
+          "parent_snippet": "BM25 is a sparse retrieval method using term and document frequency. Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.\u2026"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_3",
+          "source": "retrieval.txt",
+          "rrf_score": 0.03175,
+          "dense_rank": 1,
+          "sparse_rank": 3,
+          "text_snippet": "BM25 is a sparse retrieval method using term and document frequency. Reciprocal Rank Fusion merges ranked lists without \u2026",
+          "parent_snippet": "BM25 is a sparse retrieval method using term and document frequency. Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.\u2026"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "0844b6178f76e74b86d41af026a5dab42e32f55a7a3d21f5f61d38aef25cf0f7_0_0",
+          "source": "notes_10.md",
+          "rrf_score": 0.02753,
+          "dense_rank": 17,
+          "sparse_rank": 7,
+          "text_snippet": "# Information Retrieval \u2014 Study Notes\n\n## Overview\n\nHybrid retrieval combines sparse BM25 and dense embedding search to \u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Study Notes\n\n## Overview\n\nHybrid retrieval combines sparse BM25 and dense embedding search to capture both lexical and seman\u2026"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "bf241fe3c023e2083ca816f4a876e74b6e7c0454101e8d774491311e36de8dfc_0_1",
+          "source": "information_retrieval_07.txt",
+          "rrf_score": 0.02581,
+          "dense_rank": 16,
+          "sparse_rank": 17,
+          "text_snippet": "give coherent answers). The chunk_id encodes the document hash and parent/child indices, enabling O(1) parent lookup. Hy\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 7\n\nCross-encoder re-ranking applies a full attention model over (query, document) pairs to produce a fine-grained relev\u2026"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "c5492d62919a5d2242a0b4ba441164be617a25a660c1398fef1577045918a999_0_0",
+          "source": "information_retrieval_06.txt",
+          "rrf_score": 0.02568,
+          "dense_rank": 6,
+          "sparse_rank": 32,
+          "text_snippet": "# Information Retrieval \u2014 Part 6\n\nHybrid retrieval combines sparse BM25 and dense embedding search to capture both lexic\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 6\n\nHybrid retrieval combines sparse BM25 and dense embedding search to capture both lexical and semantic relevance. Rec\u2026"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_2",
+          "source": "retrieval.txt",
+          "rrf_score": 0.0303,
+          "dense_rank": 5,
+          "sparse_rank": 5,
+          "text_snippet": "is a sparse retrieval method using term and document frequency. BM25 is a sparse retrieval method using term and documen\u2026",
+          "parent_snippet": "BM25 is a sparse retrieval method using term and document frequency. Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.\u2026"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "59f1a9e8949ecbb332b02d73f057a4f6eb6b319987bdeb809556f896982f2a41_0_2",
+          "source": "information_retrieval_04.txt",
+          "rrf_score": 0.02988,
+          "dense_rank": 8,
+          "sparse_rank": 4,
+          "text_snippet": "restart, only new or changed texts incur inference cost. The okapi variant is the most widely used. BM25 remains competi\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 4\n\nEmbedding caches store pre-computed vectors keyed by SHA-256(model_tag + text). On restart, only new or changed text\u2026"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "5194fa86543313753d8730088e3966660e2b4caa0a6e659810d7d535c53f5f72_0_0",
+          "source": "information_retrieval_10.txt",
+          "rrf_score": 0.02859,
+          "dense_rank": 7,
+          "sparse_rank": 11,
+          "text_snippet": "# Information Retrieval \u2014 Part 10\n\nBM25 (Best Match 25) is a probabilistic ranking function used in information retrieva\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 10\n\nBM25 (Best Match 25) is a probabilistic ranking function used in information retrieval. It extends TF-IDF by incorp\u2026"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "99ac11295414618c568b852c432534b189a62e75b7df4179f26dd12c7ee702ff_0_1",
+          "source": "information_retrieval_05.txt",
+          "rrf_score": 0.02743,
+          "dense_rank": 19,
+          "sparse_rank": 6,
+          "text_snippet": "normalisation: each candidate's score is the sum of 1/(k+rank) across both lists, where k=60 is a smoothing constant. RR\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 5\n\nBM25 (Best Match 25) is a probabilistic ranking function used in information retrieval. It extends TF-IDF by incorpo\u2026"
+        }
+      ]
+    },
+    {
+      "query_id": "q003",
+      "query": "explain gradient descent and how it minimises a loss function",
+      "category": "machine_learning",
+      "difficulty": "easy",
+      "latency_breakdown_ms": {
+        "embed": 0.4,
+        "dense_search": 0.3,
+        "bm25_search": 9.4,
+        "rerank_estimated": 973.2,
+        "total_retrieval": 983.0
+      },
+      "results_returned": 10,
+      "top_10_results": [
+        {
+          "rank": 1,
+          "chunk_id": "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_3",
+          "source": "machine_learning.txt",
+          "rrf_score": 0.03105,
+          "dense_rank": 6,
+          "sparse_rank": 1,
+          "text_snippet": "bias-variance trade-off describes the tension between model complexity and fit. Gradient descent minimises a loss functi\u2026",
+          "parent_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on uns\u2026"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_0",
+          "source": "machine_learning.txt",
+          "rrf_score": 0.032,
+          "dense_rank": 1,
+          "sparse_rank": 2,
+          "text_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises \u2026",
+          "parent_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on uns\u2026"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "4cc8a84d64a6a5146a1c25d9f3e922c4818a537169a9ea158813e92de1d8d334_0_1",
+          "source": "machine_learning_10.txt",
+          "rrf_score": 0.0315,
+          "dense_rank": 2,
+          "sparse_rank": 3,
+          "text_snippet": "gradient history, improving convergence on ill-conditioned objectives. Overfitting occurs when a model achieves low trai\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 10\n\nOverfitting occurs when a model achieves low training loss but high validation loss by memorising noise in the training \u2026"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "b4a76bca053880a7bdad507fde25ff84856e34135ac80f1b00ada601f1fb2b8e_r5_0_0",
+          "source": "glossary.csv",
+          "rrf_score": 0.03279,
+          "dense_rank": 0,
+          "sparse_rank": 0,
+          "text_snippet": "term: Gradient | definition: Gradient descent minimises a loss function by iteratively updating model weights. | domain:\u2026",
+          "parent_snippet": "term: Gradient | definition: Gradient descent minimises a loss function by iteratively updating model weights. | domain: machine_learning"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "3db41136eac33768b1076a0e1c1555c7767fb6ab24a5b2b064d82bd1fdc3a75b_0_1",
+          "source": "machine_learning_07.txt",
+          "rrf_score": 0.0289,
+          "dense_rank": 13,
+          "sparse_rank": 4,
+          "text_snippet": "the generated answer diverges from the provided context by measuring token overlap between claims and retrieved passages\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 7\n\nContrastive learning trains encoders to bring representations of similar pairs closer while pushing dissimilar pairs apar\u2026"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "81385d3f19d7ef7a0171468aa6d15d4e3106d117a4b2c42266ba481135e3bec6_0_1",
+          "source": "machine_learning_04.txt",
+          "rrf_score": 0.02964,
+          "dense_rank": 8,
+          "sparse_rank": 5,
+          "text_snippet": "and overfitting (high variance). The InfoNCE loss is a practical implementation of maximum likelihood estimation over th\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 4\n\nRetrieval-augmented generation (RAG) grounds LLM responses in retrieved documents, reducing hallucination and enabling kn\u2026"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "efd109d388292f4f1d67f0feb8994c0052bd4a395b9f24c8d5d634257f56b8cf_0_0",
+          "source": "machine_learning_02.txt",
+          "rrf_score": 0.02951,
+          "dense_rank": 3,
+          "sparse_rank": 11,
+          "text_snippet": "# Machine Learning \u2014 Part 2\n\nContrastive learning trains encoders to bring representations of similar pairs closer while\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 2\n\nContrastive learning trains encoders to bring representations of similar pairs closer while pushing dissimilar pairs apar\u2026"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_2",
+          "source": "machine_learning.txt",
+          "rrf_score": 0.02963,
+          "dense_rank": 7,
+          "sparse_rank": 6,
+          "text_snippet": "when a model memorises training data but fails on unseen examples. Regularisation penalises large weights to reduce over\u2026",
+          "parent_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on uns\u2026"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_1",
+          "source": "machine_learning.txt",
+          "rrf_score": 0.02848,
+          "dense_rank": 5,
+          "sparse_rank": 14,
+          "text_snippet": "Transfer learning reuses pre-trained model weights for a new downstream task. Regularisation penalises large weights to \u2026",
+          "parent_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on uns\u2026"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "3db41136eac33768b1076a0e1c1555c7767fb6ab24a5b2b064d82bd1fdc3a75b_0_0",
+          "source": "machine_learning_07.txt",
+          "rrf_score": 0.02947,
+          "dense_rank": 4,
+          "sparse_rank": 10,
+          "text_snippet": "# Machine Learning \u2014 Part 7\n\nContrastive learning trains encoders to bring representations of similar pairs closer while\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 7\n\nContrastive learning trains encoders to bring representations of similar pairs closer while pushing dissimilar pairs apar\u2026"
+        }
+      ]
+    },
+    {
+      "query_id": "q004",
+      "query": "what is overfitting and how does regularisation prevent it",
+      "category": "machine_learning",
+      "difficulty": "medium",
+      "latency_breakdown_ms": {
+        "embed": 0.3,
+        "dense_search": 0.2,
+        "bm25_search": 4.2,
+        "rerank_estimated": 940.0,
+        "total_retrieval": 944.4
+      },
+      "results_returned": 10,
+      "top_10_results": [
+        {
+          "rank": 1,
+          "chunk_id": "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_0",
+          "source": "machine_learning.txt",
+          "rrf_score": 0.03226,
+          "dense_rank": 1,
+          "sparse_rank": 1,
+          "text_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises \u2026",
+          "parent_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on uns\u2026"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "4cc8a84d64a6a5146a1c25d9f3e922c4818a537169a9ea158813e92de1d8d334_0_0",
+          "source": "machine_learning_10.txt",
+          "rrf_score": 0.02724,
+          "dense_rank": 10,
+          "sparse_rank": 15,
+          "text_snippet": "# Machine Learning \u2014 Part 10\n\nOverfitting occurs when a model achieves low training loss but high validation loss by mem\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 10\n\nOverfitting occurs when a model achieves low training loss but high validation loss by memorising noise in the training \u2026"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_2",
+          "source": "machine_learning.txt",
+          "rrf_score": 0.03077,
+          "dense_rank": 4,
+          "sparse_rank": 4,
+          "text_snippet": "when a model memorises training data but fails on unseen examples. Regularisation penalises large weights to reduce over\u2026",
+          "parent_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on uns\u2026"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_1",
+          "source": "machine_learning.txt",
+          "rrf_score": 0.03175,
+          "dense_rank": 2,
+          "sparse_rank": 2,
+          "text_snippet": "Transfer learning reuses pre-trained model weights for a new downstream task. Regularisation penalises large weights to \u2026",
+          "parent_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on uns\u2026"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "b4a76bca053880a7bdad507fde25ff84856e34135ac80f1b00ada601f1fb2b8e_r8_0_0",
+          "source": "glossary.csv",
+          "rrf_score": 0.03279,
+          "dense_rank": 0,
+          "sparse_rank": 0,
+          "text_snippet": "term: Regularisation | definition: Regularisation penalises large weights to reduce overfitting and improve generalisati\u2026",
+          "parent_snippet": "term: Regularisation | definition: Regularisation penalises large weights to reduce overfitting and improve generalisation. | domain: machine_learning"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "f791878cd7cde877703f639138ea42bcde737e52a289ec596031b8973071f291_0_0",
+          "source": "machine_learning_09.txt",
+          "rrf_score": 0.02412,
+          "dense_rank": 12,
+          "sparse_rank": 35,
+          "text_snippet": "# Machine Learning \u2014 Part 9\n\nOverfitting occurs when a model achieves low training loss but high validation loss by memo\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 9\n\nOverfitting occurs when a model achieves low training loss but high validation loss by memorising noise in the training s\u2026"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_3",
+          "source": "machine_learning.txt",
+          "rrf_score": 0.03055,
+          "dense_rank": 6,
+          "sparse_rank": 3,
+          "text_snippet": "bias-variance trade-off describes the tension between model complexity and fit. Gradient descent minimises a loss functi\u2026",
+          "parent_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on uns\u2026"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "81385d3f19d7ef7a0171468aa6d15d4e3106d117a4b2c42266ba481135e3bec6_0_1",
+          "source": "machine_learning_04.txt",
+          "rrf_score": 0.02753,
+          "dense_rank": 7,
+          "sparse_rank": 17,
+          "text_snippet": "and overfitting (high variance). The InfoNCE loss is a practical implementation of maximum likelihood estimation over th\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 4\n\nRetrieval-augmented generation (RAG) grounds LLM responses in retrieved documents, reducing hallucination and enabling kn\u2026"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "3db41136eac33768b1076a0e1c1555c7767fb6ab24a5b2b064d82bd1fdc3a75b_0_0",
+          "source": "machine_learning_07.txt",
+          "rrf_score": 0.02614,
+          "dense_rank": 5,
+          "sparse_rank": 30,
+          "text_snippet": "# Machine Learning \u2014 Part 7\n\nContrastive learning trains encoders to bring representations of similar pairs closer while\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 7\n\nContrastive learning trains encoders to bring representations of similar pairs closer while pushing dissimilar pairs apar\u2026"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "b4a76bca053880a7bdad507fde25ff84856e34135ac80f1b00ada601f1fb2b8e_r6_0_0",
+          "source": "glossary.csv",
+          "rrf_score": 0.03055,
+          "dense_rank": 3,
+          "sparse_rank": 6,
+          "text_snippet": "term: Overfitting | definition: Overfitting is when a model memorises training data but fails on unseen examples. | doma\u2026",
+          "parent_snippet": "term: Overfitting | definition: Overfitting is when a model memorises training data but fails on unseen examples. | domain: machine_learning"
+        }
+      ]
+    },
+    {
+      "query_id": "q005",
+      "query": "how does Docker containerisation work for reproducible deployments",
+      "category": "software_engineering",
+      "difficulty": "easy",
+      "latency_breakdown_ms": {
+        "embed": 0.3,
+        "dense_search": 0.3,
+        "bm25_search": 5.3,
+        "rerank_estimated": 992.9,
+        "total_retrieval": 998.5
+      },
+      "results_returned": 10,
+      "top_10_results": [
+        {
+          "rank": 1,
+          "chunk_id": "b202289156087e05af8db1161ee5b47dfafe26f7ee182c5337da979e96f7eb1c_0_1",
+          "source": "software_engineering.txt",
+          "rrf_score": 0.02976,
+          "dense_rank": 11,
+          "sparse_rank": 2,
+          "text_snippet": "auxiliary structures to accelerate query performance. Docker packages applications with dependencies for reproducible de\u2026",
+          "parent_snippet": "Continuous integration tests code changes automatically on every commit. Continuous integration tests code changes automatically on every commit. Data\u2026"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "b202289156087e05af8db1161ee5b47dfafe26f7ee182c5337da979e96f7eb1c_0_0",
+          "source": "software_engineering.txt",
+          "rrf_score": 0.02914,
+          "dense_rank": 13,
+          "sparse_rank": 3,
+          "text_snippet": "Continuous integration tests code changes automatically on every commit. Continuous integration tests code changes autom\u2026",
+          "parent_snippet": "Continuous integration tests code changes automatically on every commit. Continuous integration tests code changes automatically on every commit. Data\u2026"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "b202289156087e05af8db1161ee5b47dfafe26f7ee182c5337da979e96f7eb1c_0_2",
+          "source": "software_engineering.txt",
+          "rrf_score": 0.02946,
+          "dense_rank": 14,
+          "sparse_rank": 1,
+          "text_snippet": "dependencies for reproducible deployments. API versioning allows backward-compatible changes while supporting older clie\u2026",
+          "parent_snippet": "Continuous integration tests code changes automatically on every commit. Continuous integration tests code changes automatically on every commit. Data\u2026"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "b4a76bca053880a7bdad507fde25ff84856e34135ac80f1b00ada601f1fb2b8e_r11_0_0",
+          "source": "glossary.csv",
+          "rrf_score": 0.03227,
+          "dense_rank": 2,
+          "sparse_rank": 0,
+          "text_snippet": "term: Docker | definition: Docker packages applications with dependencies for reproducible deployments. | domain: softwa\u2026",
+          "parent_snippet": "term: Docker | definition: Docker packages applications with dependencies for reproducible deployments. | domain: software_engineering"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "ae94dece10a8fde0f14b38571f17fb47a7b1446b836bb4e3b9c786d600e5c73e_0_0",
+          "source": "software_engineering_08.txt",
+          "rrf_score": 0.01639,
+          "dense_rank": 0,
+          "sparse_rank": -1,
+          "text_snippet": "# Software Engineering \u2014 Part 8\n\nDocker packages applications with their dependencies into portable images layered on a \u2026",
+          "parent_snippet": "# Software Engineering \u2014 Part 8\n\nDocker packages applications with their dependencies into portable images layered on a union filesystem. Dockerfile i\u2026"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "ae94dece10a8fde0f14b38571f17fb47a7b1446b836bb4e3b9c786d600e5c73e_0_1",
+          "source": "software_engineering_08.txt",
+          "rrf_score": 0.02724,
+          "dense_rank": 10,
+          "sparse_rank": 15,
+          "text_snippet": "abstractions not implementations. Mutation testing checks test suite quality by introducing deliberate bugs. GitHub Acti\u2026",
+          "parent_snippet": "# Software Engineering \u2014 Part 8\n\nDocker packages applications with their dependencies into portable images layered on a union filesystem. Dockerfile i\u2026"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "bc44fca7bf4b0e1829da84a2f548a2e7b8adf0757896cf32f919a772578a5861_0_1",
+          "source": "software_engineering_04.txt",
+          "rrf_score": 0.01299,
+          "dense_rank": 16,
+          "sparse_rank": -1,
+          "text_snippet": "rules enforce CI passes before merging. Dependencies point inward; outer layers depend on inner abstractions not impleme\u2026",
+          "parent_snippet": "# Software Engineering \u2014 Part 4\n\nObservability in production requires three pillars: metrics (time-series counters/gauges via Prometheus), logs (struc\u2026"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "13963afb4c15657b21797e8a9fdf34ec09876cad0941ef629dd54beadb8b7281_0_0",
+          "source": "software_engineering_02.txt",
+          "rrf_score": 0.01538,
+          "dense_rank": 4,
+          "sparse_rank": -1,
+          "text_snippet": "# Software Engineering \u2014 Part 2\n\nDocker packages applications with their dependencies into portable images layered on a \u2026",
+          "parent_snippet": "# Software Engineering \u2014 Part 2\n\nDocker packages applications with their dependencies into portable images layered on a union filesystem. Dockerfile i\u2026"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "8b8b32089d57c8f85ba26a101c9db4c70081342c4237c05f5e875881e85298af_0_0",
+          "source": "software_engineering_09.txt",
+          "rrf_score": 0.01613,
+          "dense_rank": 1,
+          "sparse_rank": -1,
+          "text_snippet": "# Software Engineering \u2014 Part 9\n\nTest-driven development (TDD) writes tests before implementation: red (failing test), g\u2026",
+          "parent_snippet": "# Software Engineering \u2014 Part 9\n\nTest-driven development (TDD) writes tests before implementation: red (failing test), green (minimal implementation),\u2026"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "9dca0a54efb498501e19fc37fab47e41ab2ed8dbce39ce4a6b5888cb0394bb66_0_0",
+          "source": "notes_20.md",
+          "rrf_score": 0.0122,
+          "dense_rank": 21,
+          "sparse_rank": -1,
+          "text_snippet": "# Software Engineering \u2014 Study Notes\n\n## Overview\n\nObservability in production requires three pillars: metrics (time-ser\u2026",
+          "parent_snippet": "# Software Engineering \u2014 Study Notes\n\n## Overview\n\nObservability in production requires three pillars: metrics (time-series counters/gauges via Promet\u2026"
+        }
+      ]
+    },
+    {
+      "query_id": "q006",
+      "query": "what is transfer learning and when should I use it",
+      "category": "machine_learning",
+      "difficulty": "medium",
+      "latency_breakdown_ms": {
+        "embed": 0.4,
+        "dense_search": 0.4,
+        "bm25_search": 5.9,
+        "rerank_estimated": 929.6,
+        "total_retrieval": 935.9
+      },
+      "results_returned": 10,
+      "top_10_results": [
+        {
+          "rank": 1,
+          "chunk_id": "b4a76bca053880a7bdad507fde25ff84856e34135ac80f1b00ada601f1fb2b8e_r7_0_0",
+          "source": "glossary.csv",
+          "rrf_score": 0.03202,
+          "dense_rank": 0,
+          "sparse_rank": 3,
+          "text_snippet": "term: Transfer | definition: Transfer learning reuses pre-trained model weights for a new downstream task. | domain: mac\u2026",
+          "parent_snippet": "term: Transfer | definition: Transfer learning reuses pre-trained model weights for a new downstream task. | domain: machine_learning"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_1",
+          "source": "machine_learning.txt",
+          "rrf_score": 0.03175,
+          "dense_rank": 3,
+          "sparse_rank": 1,
+          "text_snippet": "Transfer learning reuses pre-trained model weights for a new downstream task. Regularisation penalises large weights to \u2026",
+          "parent_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on uns\u2026"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "dfc0156634cd86cc9ca973a815ecd8936353ba61a668e720003c036e73fa2c22_0_0",
+          "source": "machine_learning_06.txt",
+          "rrf_score": 0.02838,
+          "dense_rank": 8,
+          "sparse_rank": 11,
+          "text_snippet": "# Machine Learning \u2014 Part 6\n\nTransfer learning reuses model weights pretrained on a large source task for a smaller down\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 6\n\nTransfer learning reuses model weights pretrained on a large source task for a smaller downstream task. Fine-tuning updat\u2026"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "dfc0156634cd86cc9ca973a815ecd8936353ba61a668e720003c036e73fa2c22_0_1",
+          "source": "machine_learning_06.txt",
+          "rrf_score": 0.02921,
+          "dense_rank": 6,
+          "sparse_rank": 9,
+          "text_snippet": "likelihood estimation over the contrastive objective. Fine-tuning updates all parameters on the target dataset, while pa\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 6\n\nTransfer learning reuses model weights pretrained on a large source task for a smaller downstream task. Fine-tuning updat\u2026"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "7131f158653d41030b09a3e8bb0afb052d1d3e5aef31e1f18dd4c77866c94920_0_1",
+          "source": "machine_learning_03.txt",
+          "rrf_score": 0.02822,
+          "dense_rank": 7,
+          "sparse_rank": 13,
+          "text_snippet": "without gradient updates via prompt engineering. Transformer architectures use self-attention to model long-range depend\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 3\n\nTransformer architectures use self-attention to model long-range dependencies in sequences. The attention mechanism compu\u2026"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_2",
+          "source": "machine_learning.txt",
+          "rrf_score": 0.03252,
+          "dense_rank": 1,
+          "sparse_rank": 0,
+          "text_snippet": "when a model memorises training data but fails on unseen examples. Regularisation penalises large weights to reduce over\u2026",
+          "parent_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on uns\u2026"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "7131f158653d41030b09a3e8bb0afb052d1d3e5aef31e1f18dd4c77866c94920_0_0",
+          "source": "machine_learning_03.txt",
+          "rrf_score": 0.02568,
+          "dense_rank": 34,
+          "sparse_rank": 5,
+          "text_snippet": "# Machine Learning \u2014 Part 3\n\nTransformer architectures use self-attention to model long-range dependencies in sequences.\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 3\n\nTransformer architectures use self-attention to model long-range dependencies in sequences. The attention mechanism compu\u2026"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_0",
+          "source": "machine_learning.txt",
+          "rrf_score": 0.03102,
+          "dense_rank": 5,
+          "sparse_rank": 2,
+          "text_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises \u2026",
+          "parent_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on uns\u2026"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "4b1f21368808292f6afe061732055a951dc8474dd13f4f8ecaac096aba6a2d1b_0_0",
+          "source": "machine_learning_08.txt",
+          "rrf_score": 0.02597,
+          "dense_rank": 16,
+          "sparse_rank": 16,
+          "text_snippet": "# Machine Learning \u2014 Part 8\n\nContrastive learning trains encoders to bring representations of similar pairs closer while\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 8\n\nContrastive learning trains encoders to bring representations of similar pairs closer while pushing dissimilar pairs apar\u2026"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "6f417f951a9e2cb14947ab62bc3d4e60df11e2d57e8ae3e276de52489d641355_0_0",
+          "source": "machine_learning_05.txt",
+          "rrf_score": 0.0256,
+          "dense_rank": 29,
+          "sparse_rank": 8,
+          "text_snippet": "# Machine Learning \u2014 Part 5\n\nTransformer architectures use self-attention to model long-range dependencies in sequences.\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 5\n\nTransformer architectures use self-attention to model long-range dependencies in sequences. The attention mechanism compu\u2026"
+        }
+      ]
+    },
+    {
+      "query_id": "q007",
+      "query": "how does a cross-encoder reranker improve retrieval precision",
+      "category": "retrieval_concepts",
+      "difficulty": "hard",
+      "latency_breakdown_ms": {
+        "embed": 0.3,
+        "dense_search": 0.3,
+        "bm25_search": 4.8,
+        "rerank_estimated": 810.1,
+        "total_retrieval": 815.2
+      },
+      "results_returned": 10,
+      "top_10_results": [
+        {
+          "rank": 1,
+          "chunk_id": "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_2",
+          "source": "retrieval.txt",
+          "rrf_score": 0.03002,
+          "dense_rank": 11,
+          "sparse_rank": 1,
+          "text_snippet": "is a sparse retrieval method using term and document frequency. BM25 is a sparse retrieval method using term and documen\u2026",
+          "parent_snippet": "BM25 is a sparse retrieval method using term and document frequency. Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.\u2026"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "bf241fe3c023e2083ca816f4a876e74b6e7c0454101e8d774491311e36de8dfc_0_0",
+          "source": "information_retrieval_07.txt",
+          "rrf_score": 0.03033,
+          "dense_rank": 3,
+          "sparse_rank": 7,
+          "text_snippet": "# Information Retrieval \u2014 Part 7\n\nCross-encoder re-ranking applies a full attention model over (query, document) pairs t\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 7\n\nCross-encoder re-ranking applies a full attention model over (query, document) pairs to produce a fine-grained relev\u2026"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "5bcb8f4f5b299e44e39b2663a45e7e833f4a8eb51bd575efbb3bc00139026d99_0_0",
+          "source": "information_retrieval_09.txt",
+          "rrf_score": 0.02996,
+          "dense_rank": 2,
+          "sparse_rank": 10,
+          "text_snippet": "# Information Retrieval \u2014 Part 9\n\nCross-encoder re-ranking applies a full attention model over (query, document) pairs t\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 9\n\nCross-encoder re-ranking applies a full attention model over (query, document) pairs to produce a fine-grained relev\u2026"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "ac23c97d4e0db71aea707c199c8b231f3cf40db01d702dbbf2937a234482ddb8_0_0",
+          "source": "notes_15.md",
+          "rrf_score": 0.03175,
+          "dense_rank": 1,
+          "sparse_rank": 3,
+          "text_snippet": "# Information Retrieval \u2014 Study Notes\n\n## Overview\n\nCross-encoder re-ranking applies a full attention model over (query,\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Study Notes\n\n## Overview\n\nCross-encoder re-ranking applies a full attention model over (query, document) pairs to produce a \u2026"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "02d6cc76032d2ad82857a967a7125e627cdc01e4097d62ba59e874ed5c058000_0_1",
+          "source": "retrieval.txt",
+          "rrf_score": 0.02921,
+          "dense_rank": 14,
+          "sparse_rank": 2,
+          "text_snippet": "BM25 is a sparse retrieval method using term and document frequency. Hybrid retrieval combines sparse BM25 and dense emb\u2026",
+          "parent_snippet": "BM25 is a sparse retrieval method using term and document frequency. Reciprocal Rank Fusion merges ranked lists without requiring score normalisation.\u2026"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "63a8d8c3a4aa8f5be28e510c14aba6e092d80d07408f0f7a0939f16209be7c21_0_0",
+          "source": "information_retrieval_01.txt",
+          "rrf_score": 0.02872,
+          "dense_rank": 4,
+          "sparse_rank": 14,
+          "text_snippet": "# Information Retrieval \u2014 Part 1\n\nCross-encoder re-ranking applies a full attention model over (query, document) pairs t\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 1\n\nCross-encoder re-ranking applies a full attention model over (query, document) pairs to produce a fine-grained relev\u2026"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "5bcb8f4f5b299e44e39b2663a45e7e833f4a8eb51bd575efbb3bc00139026d99_0_1",
+          "source": "information_retrieval_09.txt",
+          "rrf_score": 0.02571,
+          "dense_rank": 21,
+          "sparse_rank": 13,
+          "text_snippet": "(large chunks give coherent answers). The chunk_id encodes the document hash and parent/child indices, enabling O(1) par\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 9\n\nCross-encoder re-ranking applies a full attention model over (query, document) pairs to produce a fine-grained relev\u2026"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "185eef60529600fcd17f350213cadb31fa306a9480106e409b246a89f1f30c90_0_1",
+          "source": "information_retrieval_08.txt",
+          "rrf_score": 0.02552,
+          "dense_rank": 25,
+          "sparse_rank": 11,
+          "text_snippet": "both texts simultaneously, enabling deeper interaction. The ms-marco-MiniLM-L-6-v2 model achieves near-SOTA retrieval qu\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 8\n\nDense retrieval encodes queries and documents into continuous vector embeddings using transformer models. The bi-enc\u2026"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "94248b7f7c0eb20597b23254fd431cc1fbf520470cd6ec2d0b869e0a39fbeb79_0_1",
+          "source": "information_retrieval_02.txt",
+          "rrf_score": 0.02878,
+          "dense_rank": 9,
+          "sparse_rank": 8,
+          "text_snippet": "at modest inference cost. In a two-stage pipeline, the retriever fetches 50-100 candidates and the cross-encoder selects\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 2\n\nParent-child chunking embeds small 256-token child chunks for precise retrieval while returning the larger 1024-toke\u2026"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "b4a76bca053880a7bdad507fde25ff84856e34135ac80f1b00ada601f1fb2b8e_r4_0_0",
+          "source": "glossary.csv",
+          "rrf_score": 0.03279,
+          "dense_rank": 0,
+          "sparse_rank": 0,
+          "text_snippet": "term: A | definition: A cross-encoder re-ranker scores query and document jointly for higher precision. | domain: retrie\u2026",
+          "parent_snippet": "term: A | definition: A cross-encoder re-ranker scores query and document jointly for higher precision. | domain: retrieval"
+        }
+      ]
+    },
+    {
+      "query_id": "q008",
+      "query": "what does observability mean in distributed systems",
+      "category": "software_engineering",
+      "difficulty": "medium",
+      "latency_breakdown_ms": {
+        "embed": 0.2,
+        "dense_search": 0.2,
+        "bm25_search": 3.8,
+        "rerank_estimated": 714.4,
+        "total_retrieval": 718.5
+      },
+      "results_returned": 10,
+      "top_10_results": [
+        {
+          "rank": 1,
+          "chunk_id": "b4a76bca053880a7bdad507fde25ff84856e34135ac80f1b00ada601f1fb2b8e_r12_0_0",
+          "source": "glossary.csv",
+          "rrf_score": 0.03279,
+          "dense_rank": 0,
+          "sparse_rank": 0,
+          "text_snippet": "term: Observability | definition: Observability in distributed systems relies on metrics, logs, and traces. | domain: so\u2026",
+          "parent_snippet": "term: Observability | definition: Observability in distributed systems relies on metrics, logs, and traces. | domain: software_engineering"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "b202289156087e05af8db1161ee5b47dfafe26f7ee182c5337da979e96f7eb1c_0_2",
+          "source": "software_engineering.txt",
+          "rrf_score": 0.02964,
+          "dense_rank": 13,
+          "sparse_rank": 1,
+          "text_snippet": "dependencies for reproducible deployments. API versioning allows backward-compatible changes while supporting older clie\u2026",
+          "parent_snippet": "Continuous integration tests code changes automatically on every commit. Continuous integration tests code changes automatically on every commit. Data\u2026"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "b202289156087e05af8db1161ee5b47dfafe26f7ee182c5337da979e96f7eb1c_0_0",
+          "source": "software_engineering.txt",
+          "rrf_score": 0.02792,
+          "dense_rank": 22,
+          "sparse_rank": 2,
+          "text_snippet": "Continuous integration tests code changes automatically on every commit. Continuous integration tests code changes autom\u2026",
+          "parent_snippet": "Continuous integration tests code changes automatically on every commit. Continuous integration tests code changes automatically on every commit. Data\u2026"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "b202289156087e05af8db1161ee5b47dfafe26f7ee182c5337da979e96f7eb1c_0_1",
+          "source": "software_engineering.txt",
+          "rrf_score": 0.02626,
+          "dense_rank": 33,
+          "sparse_rank": 3,
+          "text_snippet": "auxiliary structures to accelerate query performance. Docker packages applications with dependencies for reproducible de\u2026",
+          "parent_snippet": "Continuous integration tests code changes automatically on every commit. Continuous integration tests code changes automatically on every commit. Data\u2026"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "9dca0a54efb498501e19fc37fab47e41ab2ed8dbce39ce4a6b5888cb0394bb66_0_0",
+          "source": "notes_20.md",
+          "rrf_score": 0.02312,
+          "dense_rank": 26,
+          "sparse_rank": 25,
+          "text_snippet": "# Software Engineering \u2014 Study Notes\n\n## Overview\n\nObservability in production requires three pillars: metrics (time-ser\u2026",
+          "parent_snippet": "# Software Engineering \u2014 Study Notes\n\n## Overview\n\nObservability in production requires three pillars: metrics (time-series counters/gauges via Promet\u2026"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "b090a3ed7d2e2b7b2ca6ed2a7f6f72ff5bf66fa2c79b4ccdea4e83fbb76f2d64_0_0",
+          "source": "distributed_systems_04.txt",
+          "rrf_score": 0.02899,
+          "dense_rank": 9,
+          "sparse_rank": 7,
+          "text_snippet": "# Distributed Systems \u2014 Part 4\n\nThe CAP theorem states that a distributed system can provide at most two of: Consistency\u2026",
+          "parent_snippet": "# Distributed Systems \u2014 Part 4\n\nThe CAP theorem states that a distributed system can provide at most two of: Consistency (every read receives the most\u2026"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "a21526064d03bb3ae1231acf00d77742a9fa6006d979804e99f0ef079465b231_0_0",
+          "source": "notes_05.md",
+          "rrf_score": 0.02475,
+          "dense_rank": 24,
+          "sparse_rank": 16,
+          "text_snippet": "# Distributed Systems \u2014 Study Notes\n\n## Overview\n\nService mesh architectures (Istio, Linkerd) offload cross-cutting conc\u2026",
+          "parent_snippet": "# Distributed Systems \u2014 Study Notes\n\n## Overview\n\nService mesh architectures (Istio, Linkerd) offload cross-cutting concerns \u2014 mutual TLS, observabili\u2026"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "1d21a92a478afe37ae384773abf1ff6ce383ae3238c20ba4359472b8c7ad8baf_0_0",
+          "source": "notes_09.md",
+          "rrf_score": 0.02274,
+          "dense_rank": 25,
+          "sparse_rank": 29,
+          "text_snippet": "# Software Engineering \u2014 Study Notes\n\n## Overview\n\nObservability in production requires three pillars: metrics (time-ser\u2026",
+          "parent_snippet": "# Software Engineering \u2014 Study Notes\n\n## Overview\n\nObservability in production requires three pillars: metrics (time-series counters/gauges via Promet\u2026"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "a3c5e1de464bc6b92111b3b15157e6cb98d5015bada3fb94584e057c8697545d_0_0",
+          "source": "notes_13.md",
+          "rrf_score": 0.02991,
+          "dense_rank": 3,
+          "sparse_rank": 9,
+          "text_snippet": "# Distributed Systems \u2014 Study Notes\n\n## Overview\n\nService mesh architectures (Istio, Linkerd) offload cross-cutting conc\u2026",
+          "parent_snippet": "# Distributed Systems \u2014 Study Notes\n\n## Overview\n\nService mesh architectures (Istio, Linkerd) offload cross-cutting concerns \u2014 mutual TLS, observabili\u2026"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "b090a3ed7d2e2b7b2ca6ed2a7f6f72ff5bf66fa2c79b4ccdea4e83fbb76f2d64_0_1",
+          "source": "distributed_systems_04.txt",
+          "rrf_score": 0.03105,
+          "dense_rank": 1,
+          "sparse_rank": 6,
+          "text_snippet": "distributed system can provide at most two of: Consistency (every read receives the most recent write), Availability (ev\u2026",
+          "parent_snippet": "# Distributed Systems \u2014 Part 4\n\nThe CAP theorem states that a distributed system can provide at most two of: Consistency (every read receives the most\u2026"
+        }
+      ]
+    },
+    {
+      "query_id": "q009",
+      "query": "what is the bias-variance tradeoff in machine learning models",
+      "category": "machine_learning",
+      "difficulty": "hard",
+      "latency_breakdown_ms": {
+        "embed": 0.2,
+        "dense_search": 0.2,
+        "bm25_search": 3.6,
+        "rerank_estimated": 810.3,
+        "total_retrieval": 814.1
+      },
+      "results_returned": 10,
+      "top_10_results": [
+        {
+          "rank": 1,
+          "chunk_id": "b4a76bca053880a7bdad507fde25ff84856e34135ac80f1b00ada601f1fb2b8e_r9_0_0",
+          "source": "glossary.csv",
+          "rrf_score": 0.03009,
+          "dense_rank": 0,
+          "sparse_rank": 12,
+          "text_snippet": "term: The | definition: The bias-variance trade-off describes the tension between model complexity and fit. | domain: ma\u2026",
+          "parent_snippet": "term: The | definition: The bias-variance trade-off describes the tension between model complexity and fit. | domain: machine_learning"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_2",
+          "source": "machine_learning.txt",
+          "rrf_score": 0.03175,
+          "dense_rank": 2,
+          "sparse_rank": 2,
+          "text_snippet": "when a model memorises training data but fails on unseen examples. Regularisation penalises large weights to reduce over\u2026",
+          "parent_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on uns\u2026"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_3",
+          "source": "machine_learning.txt",
+          "rrf_score": 0.03125,
+          "dense_rank": 3,
+          "sparse_rank": 3,
+          "text_snippet": "bias-variance trade-off describes the tension between model complexity and fit. Gradient descent minimises a loss functi\u2026",
+          "parent_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on uns\u2026"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "efd109d388292f4f1d67f0feb8994c0052bd4a395b9f24c8d5d634257f56b8cf_0_1",
+          "source": "machine_learning_02.txt",
+          "rrf_score": 0.03083,
+          "dense_rank": 7,
+          "sparse_rank": 1,
+          "text_snippet": "freezing the backbone. Few-shot and zero-shot learning apply pretrained models directly without gradient updates via pro\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 2\n\nContrastive learning trains encoders to bring representations of similar pairs closer while pushing dissimilar pairs apar\u2026"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "f791878cd7cde877703f639138ea42bcde737e52a289ec596031b8973071f291_0_0",
+          "source": "machine_learning_09.txt",
+          "rrf_score": 0.02924,
+          "dense_rank": 10,
+          "sparse_rank": 5,
+          "text_snippet": "# Machine Learning \u2014 Part 9\n\nOverfitting occurs when a model achieves low training loss but high validation loss by memo\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 9\n\nOverfitting occurs when a model achieves low training loss but high validation loss by memorising noise in the training s\u2026"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "4cc8a84d64a6a5146a1c25d9f3e922c4818a537169a9ea158813e92de1d8d334_0_0",
+          "source": "machine_learning_10.txt",
+          "rrf_score": 0.02721,
+          "dense_rank": 12,
+          "sparse_rank": 13,
+          "text_snippet": "# Machine Learning \u2014 Part 10\n\nOverfitting occurs when a model achieves low training loss but high validation loss by mem\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 10\n\nOverfitting occurs when a model achieves low training loss but high validation loss by memorising noise in the training \u2026"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_1",
+          "source": "machine_learning.txt",
+          "rrf_score": 0.03151,
+          "dense_rank": 1,
+          "sparse_rank": 4,
+          "text_snippet": "Transfer learning reuses pre-trained model weights for a new downstream task. Regularisation penalises large weights to \u2026",
+          "parent_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on uns\u2026"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "3db41136eac33768b1076a0e1c1555c7767fb6ab24a5b2b064d82bd1fdc3a75b_0_1",
+          "source": "machine_learning_07.txt",
+          "rrf_score": 0.02786,
+          "dense_rank": 15,
+          "sparse_rank": 7,
+          "text_snippet": "the generated answer diverges from the provided context by measuring token overlap between claims and retrieved passages\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 7\n\nContrastive learning trains encoders to bring representations of similar pairs closer while pushing dissimilar pairs apar\u2026"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "81385d3f19d7ef7a0171468aa6d15d4e3106d117a4b2c42266ba481135e3bec6_0_0",
+          "source": "machine_learning_04.txt",
+          "rrf_score": 0.02524,
+          "dense_rank": 23,
+          "sparse_rank": 14,
+          "text_snippet": "# Machine Learning \u2014 Part 4\n\nRetrieval-augmented generation (RAG) grounds LLM responses in retrieved documents, reducing\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 4\n\nRetrieval-augmented generation (RAG) grounds LLM responses in retrieved documents, reducing hallucination and enabling kn\u2026"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "695ce4f039f5f5b3b373c47e9a59a5ab0ef9b7b65e1782b3e7793d681df3e9e6_0_0",
+          "source": "machine_learning.txt",
+          "rrf_score": 0.02837,
+          "dense_rank": 4,
+          "sparse_rank": 16,
+          "text_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises \u2026",
+          "parent_snippet": "Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on uns\u2026"
+        }
+      ]
+    },
+    {
+      "query_id": "q010",
+      "query": "this is a deliberately off-topic question about quantum computing with no relevant context",
+      "category": "adversarial",
+      "difficulty": "adversarial",
+      "latency_breakdown_ms": {
+        "embed": 0.4,
+        "dense_search": 0.5,
+        "bm25_search": 7.6,
+        "rerank_estimated": 1063.5,
+        "total_retrieval": 1071.6
+      },
+      "results_returned": 10,
+      "top_10_results": [
+        {
+          "rank": 1,
+          "chunk_id": "3db41136eac33768b1076a0e1c1555c7767fb6ab24a5b2b064d82bd1fdc3a75b_0_1",
+          "source": "machine_learning_07.txt",
+          "rrf_score": 0.01639,
+          "dense_rank": -1,
+          "sparse_rank": 0,
+          "text_snippet": "the generated answer diverges from the provided context by measuring token overlap between claims and retrieved passages\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 7\n\nContrastive learning trains encoders to bring representations of similar pairs closer while pushing dissimilar pairs apar\u2026"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "a64289850faa19ac77d7bad8fb368b4ec838ba4033fadf57180be652ecb8803d_0_0",
+          "source": "knowledge_base_006.json",
+          "rrf_score": 0.01587,
+          "dense_rank": -1,
+          "sparse_rank": 2,
+          "text_snippet": "id: kb_006\ndomain: physics\nentries: [0]: .term: Bayes theorem\nentries: [0]: .definition: A mechanism for computing conte\u2026",
+          "parent_snippet": "id: kb_006\ndomain: physics\nentries: [0]: .term: Bayes theorem\nentries: [0]: .definition: A mechanism for computing context-dependent representations. \u2026"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "1e06308adbf0979592750fa9c8e289e774df764459f367d6cbd9a826a130507d_0_0",
+          "source": "knowledge_base_005.json",
+          "rrf_score": 0.01429,
+          "dense_rank": -1,
+          "sparse_rank": 9,
+          "text_snippet": "id: kb_005\ndomain: physics\nentries: [0]: .term: Bayes theorem\nentries: [0]: .definition: A framework for updating belief\u2026",
+          "parent_snippet": "id: kb_005\ndomain: physics\nentries: [0]: .term: Bayes theorem\nentries: [0]: .definition: A framework for updating beliefs given new evidence. entries:\u2026"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "59f1a9e8949ecbb332b02d73f057a4f6eb6b319987bdeb809556f896982f2a41_0_1",
+          "source": "information_retrieval_04.txt",
+          "rrf_score": 0.01562,
+          "dense_rank": -1,
+          "sparse_rank": 3,
+          "text_snippet": "context. This balances retrieval precision (small chunks are easier to match) with context quality (large chunks give co\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 4\n\nEmbedding caches store pre-computed vectors keyed by SHA-256(model_tag + text). On restart, only new or changed text\u2026"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "c7ab6a9444265dc6393c19970af76af5b83386b9d39ab121385dbaa711373667_0_1",
+          "source": "knowledge_base_003.json",
+          "rrf_score": 0.01613,
+          "dense_rank": -1,
+          "sparse_rank": 1,
+          "text_snippet": "[4]: .examples: [2]: Example 3: application in domain context. entries: [5]: .term: eigenvector entries: [5]: .definitio\u2026",
+          "parent_snippet": "id: kb_003\ndomain: biology\nentries: [0]: .term: embedding\nentries: [0]: .definition: A vector that remains collinear after a linear transformation. en\u2026"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "5194fa86543313753d8730088e3966660e2b4caa0a6e659810d7d535c53f5f72_0_0",
+          "source": "information_retrieval_10.txt",
+          "rrf_score": 0.0119,
+          "dense_rank": -1,
+          "sparse_rank": 23,
+          "text_snippet": "# Information Retrieval \u2014 Part 10\n\nBM25 (Best Match 25) is a probabilistic ranking function used in information retrieva\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 10\n\nBM25 (Best Match 25) is a probabilistic ranking function used in information retrieval. It extends TF-IDF by incorp\u2026"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "bbf500b49b6ce760f62b32ebe2b562ac217a23d860f5877611a7a75a2d34e281_0_1",
+          "source": "knowledge_base_004.json",
+          "rrf_score": 0.01493,
+          "dense_rank": -1,
+          "sparse_rank": 6,
+          "text_snippet": "[4]: .examples: [1]: Example 2: application in domain context. entries: [4]: .examples: [2]: Example 3: application in d\u2026",
+          "parent_snippet": "id: kb_004\ndomain: physics\nentries: [0]: .term: Bayes theorem\nentries: [0]: .definition: An operation that computes a weighted sum over a sliding wind\u2026"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "02c4a4bf78e40b351f085df6970e57d23ce9b07b03bd7f9411b0884b1eaa9773_0_0",
+          "source": "knowledge_base_001.json",
+          "rrf_score": 0.01515,
+          "dense_rank": -1,
+          "sparse_rank": 5,
+          "text_snippet": "id: kb_001\ndomain: finance\nentries: [0]: .term: gradient\nentries: [0]: .definition: A mathematical operator that iterati\u2026",
+          "parent_snippet": "id: kb_001\ndomain: finance\nentries: [0]: .term: gradient\nentries: [0]: .definition: A mathematical operator that iteratively updates model parameters.\u2026"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "99ac11295414618c568b852c432534b189a62e75b7df4179f26dd12c7ee702ff_0_0",
+          "source": "information_retrieval_05.txt",
+          "rrf_score": 0.01205,
+          "dense_rank": -1,
+          "sparse_rank": 22,
+          "text_snippet": "# Information Retrieval \u2014 Part 5\n\nBM25 (Best Match 25) is a probabilistic ranking function used in information retrieval\u2026",
+          "parent_snippet": "# Information Retrieval \u2014 Part 5\n\nBM25 (Best Match 25) is a probabilistic ranking function used in information retrieval. It extends TF-IDF by incorpo\u2026"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "81385d3f19d7ef7a0171468aa6d15d4e3106d117a4b2c42266ba481135e3bec6_0_1",
+          "source": "machine_learning_04.txt",
+          "rrf_score": 0.01176,
+          "dense_rank": -1,
+          "sparse_rank": 24,
+          "text_snippet": "and overfitting (high variance). The InfoNCE loss is a practical implementation of maximum likelihood estimation over th\u2026",
+          "parent_snippet": "# Machine Learning \u2014 Part 4\n\nRetrieval-augmented generation (RAG) grounds LLM responses in retrieved documents, reducing hallucination and enabling kn\u2026"
+        }
+      ]
+    }
+  ],
+  "rag_tests": [
+    {
+      "query_id": "q001",
+      "query": "how does BM25 sparse retrieval work",
+      "category": "retrieval_concepts",
+      "session_id": "test_session_a",
+      "input": {
+        "query": "how does BM25 sparse retrieval work",
+        "context_chunks_used": 10,
+        "stm_history_chars": 0,
+        "ltm_context_chars": 0,
+        "top_source": "retrieval.txt"
+      },
+      "output": {
+        "answer": "",
+        "answer_chars": 0,
+        "answer_snippet": "",
+        "llm": {
+          "latency_ms": 0.0,
+          "model": "none",
+          "used": false
+        },
+        "regenerated": false
+      },
+      "self_check": {},
+      "keyword_check": {
+        "found": [],
+        "missing": [
+          "BM25",
+          "term",
+          "frequency"
+        ],
+        "hit_rate": 0.0
+      },
+      "latency_ms": {
+        "total_pipeline": 425.8,
+        "llm": 0.0
+      },
+      "expect_no_answer": false
+    },
+    {
+      "query_id": "q002",
+      "query": "what is hybrid retrieval and how does it combine BM25 with dense search",
+      "category": "retrieval_concepts",
+      "session_id": "test_session_a",
+      "input": {
+        "query": "what is hybrid retrieval and how does it combine BM25 with dense search",
+        "context_chunks_used": 10,
+        "stm_history_chars": 0,
+        "ltm_context_chars": 0,
+        "top_source": "retrieval.txt"
+      },
+      "output": {
+        "answer": "",
+        "answer_chars": 0,
+        "answer_snippet": "",
+        "llm": {
+          "latency_ms": 0.0,
+          "model": "none",
+          "used": false
+        },
+        "regenerated": false
+      },
+      "self_check": {},
+      "keyword_check": {
+        "found": [],
+        "missing": [
+          "hybrid",
+          "dense",
+          "sparse"
+        ],
+        "hit_rate": 0.0
+      },
+      "latency_ms": {
+        "total_pipeline": 779.6,
+        "llm": 0.0
+      },
+      "expect_no_answer": false
+    },
+    {
+      "query_id": "q003",
+      "query": "explain gradient descent and how it minimises a loss function",
+      "category": "machine_learning",
+      "session_id": "test_session_b",
+      "input": {
+        "query": "explain gradient descent and how it minimises a loss function",
+        "context_chunks_used": 10,
+        "stm_history_chars": 0,
+        "ltm_context_chars": 0,
+        "top_source": "machine_learning.txt"
+      },
+      "output": {
+        "answer": "",
+        "answer_chars": 0,
+        "answer_snippet": "",
+        "llm": {
+          "latency_ms": 0.0,
+          "model": "none",
+          "used": false
+        },
+        "regenerated": false
+      },
+      "self_check": {},
+      "keyword_check": {
+        "found": [],
+        "missing": [
+          "gradient",
+          "loss",
+          "weights"
+        ],
+        "hit_rate": 0.0
+      },
+      "latency_ms": {
+        "total_pipeline": 959.5,
+        "llm": 0.0
+      },
+      "expect_no_answer": false
+    },
+    {
+      "query_id": "q004",
+      "query": "what is overfitting and how does regularisation prevent it",
+      "category": "machine_learning",
+      "session_id": "test_session_b",
+      "input": {
+        "query": "what is overfitting and how does regularisation prevent it",
+        "context_chunks_used": 10,
+        "stm_history_chars": 0,
+        "ltm_context_chars": 0,
+        "top_source": "machine_learning.txt"
+      },
+      "output": {
+        "answer": "",
+        "answer_chars": 0,
+        "answer_snippet": "",
+        "llm": {
+          "latency_ms": 0.0,
+          "model": "none",
+          "used": false
+        },
+        "regenerated": false
+      },
+      "self_check": {},
+      "keyword_check": {
+        "found": [],
+        "missing": [
+          "overfitting",
+          "generalise",
+          "regularisation"
+        ],
+        "hit_rate": 0.0
+      },
+      "latency_ms": {
+        "total_pipeline": 942.0,
+        "llm": 0.0
+      },
+      "expect_no_answer": false
+    },
+    {
+      "query_id": "q005",
+      "query": "how does Docker containerisation work for reproducible deployments",
+      "category": "software_engineering",
+      "session_id": "test_session_c",
+      "input": {
+        "query": "how does Docker containerisation work for reproducible deployments",
+        "context_chunks_used": 10,
+        "stm_history_chars": 0,
+        "ltm_context_chars": 0,
+        "top_source": "software_engineering.txt"
+      },
+      "output": {
+        "answer": "",
+        "answer_chars": 0,
+        "answer_snippet": "",
+        "llm": {
+          "latency_ms": 0.0,
+          "model": "none",
+          "used": false
+        },
+        "regenerated": false
+      },
+      "self_check": {},
+      "keyword_check": {
+        "found": [],
+        "missing": [
+          "Docker",
+          "container",
+          "deployment"
+        ],
+        "hit_rate": 0.0
+      },
+      "latency_ms": {
+        "total_pipeline": 948.6,
+        "llm": 0.0
+      },
+      "expect_no_answer": false
+    },
+    {
+      "query_id": "q006",
+      "query": "what is transfer learning and when should I use it",
+      "category": "machine_learning",
+      "session_id": "test_session_b",
+      "input": {
+        "query": "what is transfer learning and when should I use it",
+        "context_chunks_used": 10,
+        "stm_history_chars": 0,
+        "ltm_context_chars": 0,
+        "top_source": "glossary.csv"
+      },
+      "output": {
+        "answer": "",
+        "answer_chars": 0,
+        "answer_snippet": "",
+        "llm": {
+          "latency_ms": 0.0,
+          "model": "none",
+          "used": false
+        },
+        "regenerated": false
+      },
+      "self_check": {},
+      "keyword_check": {
+        "found": [],
+        "missing": [
+          "transfer",
+          "pre-trained",
+          "downstream"
+        ],
+        "hit_rate": 0.0
+      },
+      "latency_ms": {
+        "total_pipeline": 910.6,
+        "llm": 0.0
+      },
+      "expect_no_answer": false
+    },
+    {
+      "query_id": "q007",
+      "query": "how does a cross-encoder reranker improve retrieval precision",
+      "category": "retrieval_concepts",
+      "session_id": "test_session_a",
+      "input": {
+        "query": "how does a cross-encoder reranker improve retrieval precision",
+        "context_chunks_used": 10,
+        "stm_history_chars": 0,
+        "ltm_context_chars": 0,
+        "top_source": "retrieval.txt"
+      },
+      "output": {
+        "answer": "",
+        "answer_chars": 0,
+        "answer_snippet": "",
+        "llm": {
+          "latency_ms": 0.0,
+          "model": "none",
+          "used": false
+        },
+        "regenerated": false
+      },
+      "self_check": {},
+      "keyword_check": {
+        "found": [],
+        "missing": [
+          "cross-encoder",
+          "rerank",
+          "precision"
+        ],
+        "hit_rate": 0.0
+      },
+      "latency_ms": {
+        "total_pipeline": 781.9,
+        "llm": 0.0
+      },
+      "expect_no_answer": false
+    },
+    {
+      "query_id": "q008",
+      "query": "what does observability mean in distributed systems",
+      "category": "software_engineering",
+      "session_id": "test_session_c",
+      "input": {
+        "query": "what does observability mean in distributed systems",
+        "context_chunks_used": 10,
+        "stm_history_chars": 0,
+        "ltm_context_chars": 0,
+        "top_source": "glossary.csv"
+      },
+      "output": {
+        "answer": "term: Observability | definition: Observability in distributed systems relies on metrics, logs, and traces. | domain: software_engineering",
+        "answer_chars": 138,
+        "answer_snippet": "term: Observability | definition: Observability in distributed systems relies on metrics, logs, and traces. | domain: software_engineering",
+        "llm": {
+          "latency_ms": 0.0,
+          "model": "none",
+          "used": false
+        },
+        "regenerated": false
+      },
+      "self_check": {
+        "score": 1.0,
+        "ungrounded_ratio": 0.0,
+        "grounded": true,
+        "issues": [],
+        "verdict": "pass",
+        "need_regen": false,
+        "claim_count": 2
+      },
+      "keyword_check": {
+        "found": [
+          "metrics",
+          "logs",
+          "traces"
+        ],
+        "missing": [],
+        "hit_rate": 1.0
+      },
+      "latency_ms": {
+        "total_pipeline": 682.8,
+        "llm": 0.0
+      },
+      "expect_no_answer": false
+    },
+    {
+      "query_id": "q009",
+      "query": "what is the bias-variance tradeoff in machine learning models",
+      "category": "machine_learning",
+      "session_id": "test_session_b",
+      "input": {
+        "query": "what is the bias-variance tradeoff in machine learning models",
+        "context_chunks_used": 10,
+        "stm_history_chars": 0,
+        "ltm_context_chars": 0,
+        "top_source": "glossary.csv"
+      },
+      "output": {
+        "answer": "",
+        "answer_chars": 0,
+        "answer_snippet": "",
+        "llm": {
+          "latency_ms": 0.0,
+          "model": "none",
+          "used": false
+        },
+        "regenerated": false
+      },
+      "self_check": {},
+      "keyword_check": {
+        "found": [],
+        "missing": [
+          "bias",
+          "variance",
+          "tradeoff"
+        ],
+        "hit_rate": 0.0
+      },
+      "latency_ms": {
+        "total_pipeline": 764.4,
+        "llm": 0.0
+      },
+      "expect_no_answer": false
+    },
+    {
+      "query_id": "q010",
+      "query": "this is a deliberately off-topic question about quantum computing with no relevant context",
+      "category": "adversarial",
+      "session_id": "test_session_d",
+      "input": {
+        "query": "this is a deliberately off-topic question about quantum computing with no relevant context",
+        "context_chunks_used": 10,
+        "stm_history_chars": 0,
+        "ltm_context_chars": 0,
+        "top_source": "machine_learning_07.txt"
+      },
+      "output": {
+        "answer": "",
+        "answer_chars": 0,
+        "answer_snippet": "",
+        "llm": {
+          "latency_ms": 0.0,
+          "model": "none",
+          "used": false
+        },
+        "regenerated": false
+      },
+      "self_check": {},
+      "keyword_check": {},
+      "latency_ms": {
+        "total_pipeline": 991.2,
+        "llm": 0.0
+      },
+      "expect_no_answer": true
+    }
+  ],
+  "memory_report": {
+    "stm_tests": [
+      {
+        "test_id": "mem_001",
+        "description": "STM: write 3 turns, read back, check history preserved",
+        "turns_stored": 3,
+        "turns_retrieved": 3,
+        "write_latency_ms": 0.02,
+        "read_latency_ms": 0.0,
+        "pass": true
+      }
+    ],
+    "ltm_tests": [
+      {
+        "test_id": "mem_002",
+        "description": "LTM: store Q&A, search by keyword, expect recall",
+        "pairs_stored": 1,
+        "search_query": "rank fusion merging lists",
+        "hits_returned": 5,
+        "hit_found": true,
+        "expect_hit": true,
+        "write_latency_ms": 1.1,
+        "search_latency_ms": 0.3,
+        "pass": true
+      }
+    ],
+    "ltm_total_records": 11,
+    "stm_active_sessions": 1
+  },
+  "self_check_report": [
+    {
+      "test_id": "sc_001",
+      "description": "Grounded answer \u2014 high token overlap with context",
+      "score": 0.8,
+      "ungrounded_ratio": 0.0,
+      "claim_count": 1,
+      "grounded": true,
+      "verdict": "pass",
+      "expected_verdict": "pass",
+      "expected_grounded": true,
+      "issues": [],
+      "latency_ms": 0.03,
+      "pass": true
+    },
+    {
+      "test_id": "sc_002",
+      "description": "Ungrounded answer \u2014 quantum topic injected, context is about retrieval",
+      "score": 0.043,
+      "ungrounded_ratio": 1.0,
+      "claim_count": 1,
+      "grounded": false,
+      "verdict": "fail",
+      "expected_verdict": "fail",
+      "expected_grounded": false,
+      "issues": [
+        "[ov=0.04] Quantum entanglement allows particles to instantaneously affect each o"
+      ],
+      "latency_ms": 0.02,
+      "pass": true
+    },
+    {
+      "test_id": "sc_003",
+      "description": "Partial grounding \u2014 some claims supported, some not",
+      "score": 0.375,
+      "ungrounded_ratio": 0.5,
+      "claim_count": 2,
+      "grounded": true,
+      "verdict": "warn",
+      "expected_verdict": "warn",
+      "expected_grounded": true,
+      "issues": [
+        "[ov=0.00] It was invented in 2021 by researchers at Google."
+      ],
+      "latency_ms": 0.01,
+      "pass": true
+    }
+  ],
+  "evaluation_summary": {
+    "status": "ok",
+    "qrels_source": "manual",
+    "qrels_count": 10,
+    "num_queries": 10,
+    "mrr": 1.0,
+    "latency": {
+      "p50_ms": 851.9,
+      "p95_ms": 1020.6,
+      "p99_ms": 1039.2,
+      "mean_ms": 817.0
+    },
+    "per_query": [
+      {
+        "query_id": "q001",
+        "text": "how does BM25 sparse retrieval work",
+        "latency_ms": 397.7,
+        "mrr": 1.0,
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0
+      },
+      {
+        "query_id": "q002",
+        "text": "what is hybrid retrieval and how does it combine BM25 with dense search",
+        "latency_ms": 762.1,
+        "mrr": 1.0,
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0
+      },
+      {
+        "query_id": "q003",
+        "text": "explain gradient descent and how it minimises a loss function",
+        "latency_ms": 956.4,
+        "mrr": 1.0,
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0
+      },
+      {
+        "query_id": "q004",
+        "text": "what is overfitting and how does regularisation prevent it",
+        "latency_ms": 927.7,
+        "mrr": 1.0,
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0
+      },
+      {
+        "query_id": "q005",
+        "text": "how does Docker containerisation work for reproducible deployments",
+        "latency_ms": 959.5,
+        "mrr": 1.0,
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0
+      },
+      {
+        "query_id": "q006",
+        "text": "what is transfer learning and when should I use it",
+        "latency_ms": 901.6,
+        "mrr": 1.0,
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0
+      },
+      {
+        "query_id": "q007",
+        "text": "how does a cross-encoder reranker improve retrieval precision",
+        "latency_ms": 778.0,
+        "mrr": 1.0,
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0
+      },
+      {
+        "query_id": "q008",
+        "text": "what does observability mean in distributed systems",
+        "latency_ms": 683.3,
+        "mrr": 1.0,
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0
+      },
+      {
+        "query_id": "q009",
+        "text": "what is the bias-variance tradeoff in machine learning models",
+        "latency_ms": 802.1,
+        "mrr": 1.0,
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0
+      },
+      {
+        "query_id": "q010",
+        "text": "this is a deliberately off-topic question about quantum computing with no relevant context",
+        "latency_ms": 1001.7,
+        "mrr": 1.0,
+        "recall@1": 0.3333333333333333,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0
+      }
+    ],
+    "recall@1": 0.3333,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+  },
+  "latency_breakdown": {
+    "total_request": {
+      "p50_ms": 846.3,
+      "p95_ms": 1005.4,
+      "p99_ms": 1019.4,
+      "mean_ms": 818.6,
+      "count": 10
+    },
+    "embed": {
+      "p50_ms": 0.3,
+      "p95_ms": 0.4,
+      "p99_ms": 0.4,
+      "mean_ms": 0.3,
+      "count": 10
+    },
+    "dense_search": {
+      "p50_ms": 0.3,
+      "p95_ms": 1.4,
+      "p99_ms": 1.7,
+      "mean_ms": 0.4,
+      "count": 10
+    },
+    "bm25_search": {
+      "p50_ms": 5.0,
+      "p95_ms": 10.2,
+      "p99_ms": 11.0,
+      "mean_ms": 5.2,
+      "count": 10
+    },
+    "retrieval_total": {
+      "p50_ms": 881.3,
+      "p95_ms": 1104.5,
+      "p99_ms": 1136.6,
+      "mean_ms": 854.9,
+      "count": 10
+    }
+  },
+  "threshold_results": [
+    {
+      "name": "embed p95 latency",
+      "status": "PASS",
+      "actual": 0.4,
+      "threshold": 200,
+      "mode": "max"
+    },
+    {
+      "name": "recall@1",
+      "status": "PASS",
+      "actual": 0.3333,
+      "threshold": 0.2,
+      "mode": "min"
+    },
+    {
+      "name": "recall@5",
+      "status": "PASS",
+      "actual": 1.0,
+      "threshold": 0.7,
+      "mode": "min"
+    },
+    {
+      "name": "mrr",
+      "status": "PASS",
+      "actual": 1.0,
+      "threshold": 0.5,
+      "mode": "min"
+    }
+  ],
+  "component_health": {
+    "vector_store": {
+      "status": "ok",
+      "size": 4724
+    },
+    "bm25_store": {
+      "status": "ok",
+      "size": 4724
+    },
+    "embedding_cache": {
+      "hits": 51,
+      "misses": 1,
+      "hit_rate": 0.981,
+      "cached_files": 4596
+    },
+    "llm": {
+      "status": "offline",
+      "model": "auto",
+      "configured_backend": "auto",
+      "active_backend": "none",
+      "available_models": []
+    },
+    "short_term_memory": {
+      "status": "ok",
+      "active_sessions": 1
+    },
+    "long_term_memory": {
+      "status": "ok",
+      "total_records": 11
+    },
+    "cross_encoder_reranker": {
+      "status": "ok"
+    }
+  },
+  "failure_modes": [
+    {
+      "component": "LLM",
+      "severity": "high",
+      "description": "No LLM backend available (tried: auto) \u2014 RAG answers are top retrieved passages only.",
+      "fix": "Enable any one backend:\n  \u2022 Ollama:       ollama serve && ollama pull llama3.2\n  \u2022 OpenAI:       export OPENAI_API_KEY=sk-...\n  \u2022 Anthropic:    export ANTHROPIC_API_KEY=sk-ant-...\n  \u2022 HuggingFace:  export HF_API_TOKEN=hf_...\n  \u2022 Local model:  pip install transformers accelerate  (auto-downloads TinyLlama)"
+    },
+    {
+      "component": "SelfChecker",
+      "severity": "info",
+      "description": "Token-overlap faithfulness is a heuristic proxy, not entailment. High-overlap answers can still be factually wrong if context is wrong.",
+      "fix": "Upgrade to MiniCheck or TRUE model for production faithfulness scoring."
+    },
+    {
+      "component": "HNSW Scale",
+      "severity": "info",
+      "description": "FAISS HNSW stable to ~10M vectors on 16GB RAM. For billion-scale: swap to Qdrant + DiskANN + SQ8 quantisation.",
+      "fix": "Replace VectorStore with QdrantStore (zero API change at retrieval layer)."
+    }
+  ],
+  "summary": {
+    "formats_ok": 11,
+    "formats_tested": 14,
+    "rag_grounded_answers": 1,
+    "rag_total_queries": 10,
+    "self_check_tests_passed": 3,
+    "self_check_tests_total": 3,
+    "thresholds_passed": 4,
+    "thresholds_total": 4,
+    "memory_stm_tests_passed": 1,
+    "memory_ltm_tests_passed": 1,
+    "llm_online": false,
+    "index_size": 4724,
+    "eval_status": "ok"
+  }
+}

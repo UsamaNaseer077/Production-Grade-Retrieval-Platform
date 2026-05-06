@@ -1,0 +1,101 @@
+algorithm,type,time_complexity,space_complexity,use_case
+Floyd-Warshall,graph,O(1),O(n²),retrieval
+Paxos,search,O(1),O(n),routing
+BM25,string,O(n²),O(1),routing
+QuickSort,tree,O(n log n),O(n log n),retrieval
+BM25,sort,O(log n),O(n log n),compression
+QuickSort,search,O(n²),O(n),routing
+MergeSort,consensus,O(n²),O(n²),indexing
+RAFT,consensus,O(1),O(n²),retrieval
+BFS,graph,O(n),O(n log n),indexing
+KMP,sort,O(2^n),O(n²),retrieval
+MergeSort,string,O(2^n),O(n log n),replication
+DFS,consensus,O(1),O(1),replication
+KMP,consensus,O(n²),O(n²),routing
+B-Tree,consensus,O(n),O(n²),retrieval
+HNSW,consensus,O(n log n),O(1),retrieval
+RAFT,consensus,O(n),O(n²),routing
+HNSW,search,O(n),O(n),replication
+LSM-Tree,graph,O(n log n),O(n),routing
+QuickSort,graph,O(n),O(n log n),routing
+B-Tree,string,O(1),O(n²),indexing
+KMP,search,O(n²),O(n),replication
+BM25,consensus,O(2^n),O(n²),routing
+BM25,search,O(2^n),O(n),replication
+Rabin-Karp,graph,O(log n),O(n),replication
+DFS,consensus,O(log n),O(n log n),indexing
+Floyd-Warshall,consensus,O(n²),O(1),retrieval
+BM25,consensus,O(n),O(n²),indexing
+B-Tree,string,O(n²),O(n log n),routing
+RAFT,sort,O(n log n),O(n),indexing
+B-Tree,sort,O(n),O(1),retrieval
+Rabin-Karp,search,O(n),O(n²),compression
+Paxos,search,O(n),O(n²),routing
+HNSW,sort,O(1),O(n log n),replication
+LSM-Tree,graph,O(log n),O(n log n),indexing
+Floyd-Warshall,consensus,O(n log n),O(n),replication
+MergeSort,string,O(log n),O(n),compression
+RAFT,string,O(log n),O(n),routing
+LSM-Tree,string,O(log n),O(n),routing
+HNSW,sort,O(1),O(n log n),compression
+LSM-Tree,consensus,O(2^n),O(n),compression
+BM25,string,O(2^n),O(1),replication
+B-Tree,consensus,O(n log n),O(1),compression
+Dijkstra,tree,O(n log n),O(n²),retrieval
+Paxos,graph,O(n),O(n²),retrieval
+HNSW,tree,O(n),O(1),compression
+Paxos,consensus,O(2^n),O(n),compression
+QuickSort,string,O(n log n),O(n²),routing
+DFS,consensus,O(2^n),O(n²),routing
+RAFT,string,O(1),O(n log n),replication
+QuickSort,sort,O(log n),O(1),indexing
+RAFT,tree,O(1),O(n log n),compression
+QuickSort,consensus,O(1),O(n),indexing
+RAFT,search,O(n log n),O(n log n),replication
+Paxos,tree,O(n),O(n log n),compression
+DFS,graph,O(n log n),O(n²),replication
+RAFT,sort,O(1),O(1),retrieval
+BM25,graph,O(n log n),O(n²),routing
+BM25,consensus,O(2^n),O(n),indexing
+BM25,sort,O(n log n),O(n²),retrieval
+Dijkstra,consensus,O(2^n),O(n²),replication
+RAFT,search,O(n²),O(n),replication
+RAFT,sort,O(log n),O(1),retrieval
+Floyd-Warshall,sort,O(n),O(1),routing
+KMP,tree,O(n),O(1),replication
+B-Tree,sort,O(n),O(n²),replication
+Dijkstra,string,O(1),O(n²),replication
+Floyd-Warshall,search,O(2^n),O(1),compression
+QuickSort,tree,O(n log n),O(n log n),routing
+Dijkstra,sort,O(2^n),O(n log n),retrieval
+HNSW,tree,O(n),O(1),replication
+MergeSort,search,O(1),O(n²),retrieval
+BM25,search,O(n²),O(1),compression
+Floyd-Warshall,sort,O(1),O(n),compression
+LSM-Tree,graph,O(1),O(n²),indexing
+Paxos,search,O(n log n),O(n),compression
+MergeSort,sort,O(n),O(n²),compression
+BFS,tree,O(1),O(n log n),replication
+RAFT,string,O(1),O(n²),indexing
+RAFT,consensus,O(n),O(1),replication
+LSM-Tree,graph,O(n),O(1),compression
+HNSW,search,O(2^n),O(n log n),indexing
+MergeSort,graph,O(n²),O(n²),indexing
+B-Tree,consensus,O(n),O(n²),routing
+BFS,search,O(2^n),O(n),compression
+Dijkstra,graph,O(n),O(n log n),replication
+QuickSort,search,O(n²),O(n log n),routing
+Dijkstra,search,O(n),O(n²),routing
+LSM-Tree,search,O(n²),O(1),compression
+HNSW,sort,O(n log n),O(n²),compression
+QuickSort,consensus,O(1),O(n),routing
+HNSW,graph,O(n²),O(n log n),routing
+BM25,consensus,O(log n),O(n²),replication
+QuickSort,tree,O(n log n),O(n²),routing
+LSM-Tree,tree,O(2^n),O(n),retrieval
+LSM-Tree,search,O(n²),O(n log n),routing
+Dijkstra,tree,O(2^n),O(n²),routing
+Dijkstra,sort,O(2^n),O(n²),routing
+LSM-Tree,string,O(2^n),O(n²),compression
+BFS,sort,O(n log n),O(n),retrieval
+Rabin-Karp,graph,O(n),O(n log n),replication

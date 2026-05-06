@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+
+# ── Generated index files (rebuilt from source) ───────────────────────────────
+data/faiss.index
+data/meta.jsonl
+data/bm25.pkl
+data/hashes.json
+data/memory.db
+
+# Embedding cache (large, derived artefacts)
+data/emb_cache/
+
+# Downloaded model weights
+data/models/
+
+# ── Keep source data ──────────────────────────────────────────────────────────
+!data/corpus/
+!data/corpus/**
+!data/shakespeare/
+!data/shakespeare/**
+!data/sample_docs/
+!data/sample_docs/**
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+tmp/
+logs/
+
+# OS
+Thumbs.db
+ehthumbs.db

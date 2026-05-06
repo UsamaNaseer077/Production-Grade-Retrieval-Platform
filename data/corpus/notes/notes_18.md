@@ -1,0 +1,34 @@
+# Databases — Study Notes
+
+## Overview
+
+SQL window functions compute aggregate values over a sliding partition of rows without collapsing them. PARTITION BY groups rows; ORDER BY sorts within the partition; the frame clause specifies which rows to include in each aggregate (ROWS BETWEEN, RANGE BETWEEN). Rank, dense_rank, row_number, lead, lag, and cumulative sum are common window functions.
+
+### Details
+
+SQL window functions compute aggregate values over a sliding partition of rows without collapsing them. PARTITION BY groups rows; ORDER BY sorts within the partition; the frame clause specifies which rows to include in each aggregate (ROWS BETWEEN, RANGE BETWEEN).
+
+## Key Concepts
+
+Database normalisation eliminates redundancy by decomposing tables into relations with minimal functional dependencies. First normal form requires atomic column values. Second normal form removes partial dependencies on composite primary keys. Third normal form removes transitive dependencies. BCNF (Boyce-Codd) is a stricter variant. Over-normalisation can hurt query performance; denormalisation trades space for read speed.
+
+### Details
+
+Database normalisation eliminates redundancy by decomposing tables into relations with minimal functional dependencies. First normal form requires atomic column values.
+
+## Implementation Details
+
+B-tree indexes organise keys in a balanced tree with branching factor B. Searches, inserts, and deletes all run in O(log_B N) I/O operations. The B+ tree variant stores all values in leaf nodes linked in a sorted doubly-linked list, enabling efficient range scans. PostgreSQL, MySQL, and SQLite all use B+ trees as the default index structure.
+
+### Details
+
+B-tree indexes organise keys in a balanced tree with branching factor B. Searches, inserts, and deletes all run in O(log_B N) I/O operations.
+
+## Trade-offs and Limitations
+
+Vector databases store high-dimensional embeddings and support approximate nearest-neighbour queries via HNSW, IVF, or Product Quantisation indexes. FAISS implements multiple ANN algorithms with GPU support. Qdrant, Weaviate, and Pinecone add metadata filtering, CRUD operations, and production features. At billion-scale, DiskANN and SPANN trade some recall for dramatically reduced memory footprint.
+
+### Details
+
+Vector databases store high-dimensional embeddings and support approximate nearest-neighbour queries via HNSW, IVF, or Product Quantisation indexes. FAISS implements multiple ANN algorithms with GPU support.
+

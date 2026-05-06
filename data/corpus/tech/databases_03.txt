@@ -1,0 +1,13 @@
+# Databases — Part 3
+
+LSM trees (Log-Structured Merge-Trees) write all mutations to an in-memory memtable and an append-only WAL, then periodically flush sorted runs to disk (SSTables). Background compaction merges overlapping runs to bound read amplification. LSM trees excel at write-heavy workloads; RocksDB, LevelDB, and Apache Cassandra use LSM.
+
+B-tree indexes organise keys in a balanced tree with branching factor B. Searches, inserts, and deletes all run in O(log_B N) I/O operations. The B+ tree variant stores all values in leaf nodes linked in a sorted doubly-linked list, enabling efficient range scans. PostgreSQL, MySQL, and SQLite all use B+ trees as the default index structure.
+
+SQL window functions compute aggregate values over a sliding partition of rows without collapsing them. PARTITION BY groups rows; ORDER BY sorts within the partition; the frame clause specifies which rows to include in each aggregate (ROWS BETWEEN, RANGE BETWEEN). Rank, dense_rank, row_number, lead, lag, and cumulative sum are common window functions.
+
+ACID transactions guarantee Atomicity (all-or-nothing), Consistency (integrity constraints preserved), Isolation (concurrent transactions behave as if serial), and Durability (committed data survives failure). PostgreSQL implements MVCC for snapshot isolation, reducing lock contention. Serialisable isolation detects write skew anomalies via predicate locking or serialisability conflict detection graphs.
+
+SQL window functions compute aggregate values over a sliding partition of rows without collapsing them. Serialisable isolation detects write skew anomalies via predicate locking or serialisability conflict detection graphs. PostgreSQL, MySQL, and SQLite all use B+ trees as the default index structure. PARTITION BY groups rows; ORDER BY sorts within the partition; the frame clause specifies which rows to include in each aggregate (ROWS BETWEEN, RANGE BETWEEN). PostgreSQL implements MVCC for snapshot isolation, reducing lock contention. LSM trees excel at write-heavy workloads; RocksDB, LevelDB, and Apache Cassandra use LSM.
+
+SQL window functions compute aggregate values over a sliding partition of rows without collapsing them. PostgreSQL implements MVCC for snapshot isolation, reducing lock contention. PARTITION BY groups rows; ORDER BY sorts within the partition; the frame clause specifies which rows to include in each aggregate (ROWS BETWEEN, RANGE BETWEEN). The B+ tree variant stores all values in leaf nodes linked in a sorted doubly-linked list, enabling efficient range scans. Rank, dense_rank, row_number, lead, lag, and cumulative sum are common window functions. LSM trees excel at write-heavy workloads; RocksDB, LevelDB, and Apache Cassandra use LSM.

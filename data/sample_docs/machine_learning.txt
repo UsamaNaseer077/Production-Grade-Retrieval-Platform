@@ -1,0 +1,49 @@
+Gradient descent minimises a loss function by iteratively updating model weights.  Overfitting is when a model memorises training data but fails on unseen examples. Overfitting is when a model memorises training data but fails on unseen examples.
+
+Overfitting is when a model memorises training data but fails on unseen examples.  Overfitting is when a model memorises training data but fails on unseen examples. The bias-variance trade-off describes the tension between model complexity and fit.
+
+Transfer learning reuses pre-trained model weights for a new downstream task.  Regularisation penalises large weights to reduce overfitting and improve generalisation. Regularisation penalises large weights to reduce overfitting and improve generalisation.
+
+Regularisation penalises large weights to reduce overfitting and improve generalisation.  Gradient descent minimises a loss function by iteratively updating model weights. Regularisation penalises large weights to reduce overfitting and improve generalisation.
+
+The bias-variance trade-off describes the tension between model complexity and fit.  Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on unseen examples.
+
+Gradient descent minimises a loss function by iteratively updating model weights.  The bias-variance trade-off describes the tension between model complexity and fit. Regularisation penalises large weights to reduce overfitting and improve generalisation.
+
+Overfitting is when a model memorises training data but fails on unseen examples.  Transfer learning reuses pre-trained model weights for a new downstream task. Regularisation penalises large weights to reduce overfitting and improve generalisation.
+
+Transfer learning reuses pre-trained model weights for a new downstream task.  The bias-variance trade-off describes the tension between model complexity and fit. Regularisation penalises large weights to reduce overfitting and improve generalisation.
+
+Regularisation penalises large weights to reduce overfitting and improve generalisation.  Overfitting is when a model memorises training data but fails on unseen examples. Gradient descent minimises a loss function by iteratively updating model weights.
+
+The bias-variance trade-off describes the tension between model complexity and fit.  Overfitting is when a model memorises training data but fails on unseen examples. Overfitting is when a model memorises training data but fails on unseen examples.
+
+Gradient descent minimises a loss function by iteratively updating model weights.  Overfitting is when a model memorises training data but fails on unseen examples. The bias-variance trade-off describes the tension between model complexity and fit.
+
+Overfitting is when a model memorises training data but fails on unseen examples.  The bias-variance trade-off describes the tension between model complexity and fit. Overfitting is when a model memorises training data but fails on unseen examples.
+
+Transfer learning reuses pre-trained model weights for a new downstream task.  Regularisation penalises large weights to reduce overfitting and improve generalisation. Overfitting is when a model memorises training data but fails on unseen examples.
+
+Regularisation penalises large weights to reduce overfitting and improve generalisation.  The bias-variance trade-off describes the tension between model complexity and fit. Transfer learning reuses pre-trained model weights for a new downstream task.
+
+The bias-variance trade-off describes the tension between model complexity and fit.  Overfitting is when a model memorises training data but fails on unseen examples. Overfitting is when a model memorises training data but fails on unseen examples.
+
+Gradient descent minimises a loss function by iteratively updating model weights.  Transfer learning reuses pre-trained model weights for a new downstream task. Overfitting is when a model memorises training data but fails on unseen examples.
+
+Overfitting is when a model memorises training data but fails on unseen examples.  Transfer learning reuses pre-trained model weights for a new downstream task. The bias-variance trade-off describes the tension between model complexity and fit.
+
+Transfer learning reuses pre-trained model weights for a new downstream task.  Overfitting is when a model memorises training data but fails on unseen examples. Overfitting is when a model memorises training data but fails on unseen examples.
+
+Regularisation penalises large weights to reduce overfitting and improve generalisation.  The bias-variance trade-off describes the tension between model complexity and fit. Transfer learning reuses pre-trained model weights for a new downstream task.
+
+The bias-variance trade-off describes the tension between model complexity and fit.  Gradient descent minimises a loss function by iteratively updating model weights. Gradient descent minimises a loss function by iteratively updating model weights.
+
+Gradient descent minimises a loss function by iteratively updating model weights.  Gradient descent minimises a loss function by iteratively updating model weights. Regularisation penalises large weights to reduce overfitting and improve generalisation.
+
+Overfitting is when a model memorises training data but fails on unseen examples.  Regularisation penalises large weights to reduce overfitting and improve generalisation. Transfer learning reuses pre-trained model weights for a new downstream task.
+
+Transfer learning reuses pre-trained model weights for a new downstream task.  Gradient descent minimises a loss function by iteratively updating model weights. Overfitting is when a model memorises training data but fails on unseen examples.
+
+Regularisation penalises large weights to reduce overfitting and improve generalisation.  The bias-variance trade-off describes the tension between model complexity and fit. Transfer learning reuses pre-trained model weights for a new downstream task.
+
+The bias-variance trade-off describes the tension between model complexity and fit.  The bias-variance trade-off describes the tension between model complexity and fit. The bias-variance trade-off describes the tension between model complexity and fit.

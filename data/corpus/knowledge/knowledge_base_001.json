@@ -1,0 +1,69 @@
+{
+  "id": "kb_001",
+  "domain": "finance",
+  "entries": [
+    {
+      "term": "gradient",
+      "definition": "A mathematical operator that iteratively updates model parameters.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "embedding",
+      "definition": "A vector that remains collinear after a linear transformation.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "indexing",
+      "definition": "A vector that remains collinear after a linear transformation.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "parallelism",
+      "definition": "A mechanism for computing context-dependent representations.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "Bayes theorem",
+      "definition": "A framework for updating beliefs given new evidence.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "pipeline",
+      "definition": "A dense vector representation in a learned feature space.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "gradient",
+      "definition": "A dense vector representation in a learned feature space.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    }
+  ]
+}

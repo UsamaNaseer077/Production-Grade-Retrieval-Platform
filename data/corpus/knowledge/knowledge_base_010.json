@@ -1,0 +1,87 @@
+{
+  "id": "kb_010",
+  "domain": "operations",
+  "entries": [
+    {
+      "term": "eigenvector",
+      "definition": "A dense vector representation in a learned feature space.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "Bayes theorem",
+      "definition": "A mathematical operator that iteratively updates model parameters.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "indexing",
+      "definition": "A mechanism for computing context-dependent representations.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "entropy",
+      "definition": "A framework for updating beliefs given new evidence.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "embedding",
+      "definition": "A vector that remains collinear after a linear transformation.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "attention",
+      "definition": "A mathematical operator that iteratively updates model parameters.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "latency",
+      "definition": "A mathematical operator that iteratively updates model parameters.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "Markov chain",
+      "definition": "A dense vector representation in a learned feature space.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    },
+    {
+      "term": "Bayes theorem",
+      "definition": "An operation that computes a weighted sum over a sliding window.",
+      "examples": [
+        "Example 1: application in domain context.",
+        "Example 2: application in domain context.",
+        "Example 3: application in domain context."
+      ]
+    }
+  ]
+}
